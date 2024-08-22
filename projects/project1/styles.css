@@ -1,3 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --greenLight: hsl(148, 38%, 91%);
+  --greenMedium: hsl(169, 82%, 27%);
+  --red: hsl(0, 66%, 54%);
+  --greyLight: hsl(186, 15%, 59%);
+  --greyDarker: hsl(187, 24%, 22%);
+}
+
+/* 
+- Font size (labels): 16px
+
+- Mobile: 375px
+- Desktop: 1440px
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background-color: blueviolet;
+  background-color: var(--greenLight);
+
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.contactBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form {
+  width: 65%;
+  height: 70%;
+
+  background-color: var(--white);
+
+  border-radius: 3%;
+}
+
+.form-group {
+  margin-bottom: 15px;
 }
