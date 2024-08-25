@@ -29,6 +29,8 @@ body {
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
+
+  padding: 25px;
 }
 
 .contactBox {
@@ -36,6 +38,9 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .contactHeading {
@@ -47,8 +52,10 @@ body {
 }
 
 .form {
+  overflow: auto;
+
   width: 85%;
-  height: 90%;
+  height: 750px;
 
   background-color: var(--white);
   border-radius: 3%;
@@ -57,7 +64,10 @@ body {
   color: var(--greyDarker);
 
   padding: 25px;
+}
 
+.form,
+fieldset {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -73,12 +83,80 @@ body {
   margin-bottom: 10px;
 }
 
+fieldset {
+  border: none;
+}
+
+.radioButton {
+  width: 100%;
+  border: 1px solid var(--greenMedium);
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.radioButton label,
+.radioButton input {
+  margin-left: 10px;
+}
+
+input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.custom-radio {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+}
+
+.custom-radio::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--greenMedium);
+
+  border-radius: 50%;
+  background-color: #fff;
+  transition: background-color 0.2s ease;
+}
+
+input[type="radio"]:checked + .custom-radio::before {
+  background-color: var(--greenMedium);
+  border-color: var(--greenLight);
+}
+
+input[type="radio"]:checked + .custom-radio::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+}
+
 .mandatory {
   color: var(--greenMedium);
   margin-left: 5px;
 }
 
 .submitButton {
+  margin-top: 20px;
+
   background-color: var(--greenMedium);
   border-radius: 5px;
   color: var(--white);

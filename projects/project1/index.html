@@ -61,23 +61,31 @@
           </div>
 
           <fieldset class="form-group">
-            <legend>Query Type</legend>
-            <input
-              type="radio"
-              id="general"
-              name="queryType"
-              value="general"
-              required
-            />
-            <label for="general">General Enquiry</label>
-            <input
-              type="radio"
-              id="support"
-              name="queryType"
-              value="support"
-              required
-            />
-            <label for="support">Support Request</label>
+            <legend class="labelSpace">
+              Query Type <span class="mandatory">*</span>
+            </legend>
+
+            <div class="radioButton">
+              <input
+                type="radio"
+                id="general"
+                name="queryType"
+                value="general"
+                required
+              />
+              <label for="general" class="custom-radio">General Enquiry</label>
+            </div>
+
+            <div class="radioButton">
+              <input
+                type="radio"
+                id="support"
+                name="queryType"
+                value="support"
+                required
+              />
+              <label for="support" class="custom-radio">Support Request</label>
+            </div>
           </fieldset>
 
           <div class="form-group">
