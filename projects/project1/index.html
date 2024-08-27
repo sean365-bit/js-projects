@@ -11,8 +11,21 @@
     <nav></nav>
     <header></header>
     <main>
+      <div class="displayMessage">
+        <div class="sent">
+          <img
+            src="./assets/icon-success-check.svg"
+            alt="message sent checkmark"
+          />
+          <div class="messageSent">Message Sent!</div>
+        </div>
+        <div class="message">
+          Thanks for completing the form. We'll be in touch soon!
+        </div>
+      </div>
+
       <section class="contactBox">
-        <form class="form">
+        <form class="form" id="form">
           <div class="contactHeading">contact us</div>
 
           <div class="form-group">
@@ -114,7 +127,7 @@
             >
           </div>
 
-          <button class="submitButton" type="submit">Submit</button>
+          <button class="submitButton" type="button">Submit</button>
         </form>
       </section>
     </main>

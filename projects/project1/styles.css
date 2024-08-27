@@ -39,8 +39,8 @@ body {
   align-items: center;
   height: 100vh;
 
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .contactHeading {
@@ -52,8 +52,7 @@ body {
 }
 
 .form {
-  overflow: auto;
-
+  /* overflow: auto;*/
   width: 85%;
   height: 750px;
 
@@ -163,6 +162,14 @@ input[type="radio"]:checked + .custom-radio::after {
 
   width: 100%;
   height: 10%;
+
+  cursor: pointer;
+
+  transition: background-color 0.2s ease;
+}
+
+.submitButton:hover {
+  background-color: var(--greyDarker);
 }
 
 .inputfield,
@@ -173,6 +180,8 @@ input[type="radio"]:checked + .custom-radio::after {
   font-size: 16px;
   padding: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+
+  cursor: pointer;
 }
 
 .inputfield {
@@ -190,4 +199,38 @@ input[type="radio"]:checked + .custom-radio::after {
   border-color: var(--greenLight);
   box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
   outline: none;
+}
+
+.displayMessage {
+  padding: 20px;
+
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  height: 120px;
+  width: 410px;
+
+  border-radius: 15px;
+  background: var(--greenMedium);
+  color: var(--white);
+
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sent {
+  font-weight: 700;
+
+  display: flex;
+}
+
+.messageSent {
+  margin-left: 15px;
+}
+
+.message {
+  font-weight: 400;
 }
