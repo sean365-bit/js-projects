@@ -11,7 +11,7 @@
     <nav></nav>
     <header></header>
     <main>
-      <div class="displayMessage">
+      <div class="displayMessage" id="successMessage">
         <div class="sent">
           <img
             src="./assets/icon-success-check.svg"
@@ -24,12 +24,14 @@
         </div>
       </div>
 
+      <!---->
       <section class="contactBox">
-        <form class="form" id="form">
+        <form class="form" id="form" method="GET">
           <div class="contactHeading">contact us</div>
 
           <div class="form-group-items">
             <div class="form-group">
+              <!-- form-group is form-control-->
               <div class="labelSpace">
                 <label for="firstName"
                   >First Name <span class="mandatory">*</span></label
@@ -40,8 +42,8 @@
                 type="text"
                 name="firstName"
                 id="firstName"
-                required
               />
+              <small id="error"></small>
             </div>
 
             <div class="form-group">
@@ -55,8 +57,8 @@
                 type="text"
                 name="lastName"
                 id="lastName"
-                required
               />
+              <small id="error"></small>
             </div>
           </div>
 
@@ -66,13 +68,8 @@
                 >Email Address <span class="mandatory">*</span></label
               ><br />
             </div>
-            <input
-              class="inputfield"
-              type="email"
-              name="email"
-              id="email"
-              required
-            />
+            <input class="inputfield" type="email" name="email" id="email" />
+            <small id="error"></small>
           </div>
 
           <fieldset class="form-group">
@@ -87,7 +84,6 @@
                   id="general"
                   name="queryType"
                   value="general"
-                  required
                 />
                 <label for="general" class="custom-radio"
                   >General Enquiry</label
@@ -100,12 +96,13 @@
                   id="support"
                   name="queryType"
                   value="support"
-                  required
                 />
+
                 <label for="support" class="custom-radio"
                   >Support Request</label
                 >
               </div>
+              <small id="error"></small>
             </div>
           </fieldset>
 
@@ -119,23 +116,19 @@
               class="inputfieldText"
               name="message"
               id="message"
-              required
             ></textarea>
+            <small id="error"></small>
           </div>
 
           <div class="form-group">
-            <input
-              type="checkbox"
-              name="agreeToContact"
-              id="agreeToContact"
-              required
-            />
+            <input type="checkbox" name="agreeToContact" id="agreeToContact" />
             <label for="agreeToContact"
               >I consent to being contacted by the team</label
             >
+            <small id="error"></small>
           </div>
 
-          <button class="submitButton" type="button">Submit</button>
+          <button class="submitButton" type="submit">Submit</button>
         </form>
       </section>
     </main>

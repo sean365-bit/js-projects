@@ -233,6 +233,24 @@ input[type="radio"]:checked + .custom-radio::after {
   font-weight: 400;
 }
 
+/* Error form */
+#error {
+  display: block;
+  margin-top: 3px;
+
+  color: var(--red);
+  visibility: hidden; /* */
+}
+
+.error input {
+  border-color: #e74c3c;
+}
+
+.error #error {
+  visibility: visible;
+  color: #e74c3c;
+}
+
 /* Media queries */
 /* Small devices */
 @media only screen and (min-width: 370px) {

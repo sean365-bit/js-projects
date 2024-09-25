@@ -47,10 +47,19 @@ Users should be able to:
 
 ### What I learned
 
-I enjoyed developing this solution for the contact form. I revisited CSS Flexbox and went through the process of validating a form using JavaScript. I also learned about the mobile-first workflow, which prioritizes mobile devices.
+I enjoyed developing this solution for the contact form. I revisited CSS Flexbox and went through the process of validating a form using JavaScript. I also learned about the mobile-first workflow, which prioritizes mobile devices. Additionally, I learned the importance of client-side validation as an initial check and a key feature of a good user experience. By catching invalid data on the client side, users can correct it immediately.
 
 ```js
 const proudOfThisFunc = () => {
   console.log("🎉");
 };
 ```
+
+/\* \*/
+9.06 min
+.form-control // pading and margin
+
+JS
+15.15
+
+checkpoint 27.50
