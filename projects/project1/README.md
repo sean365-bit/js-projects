@@ -54,12 +54,3 @@ const proudOfThisFunc = () => {
   console.log("🎉");
 };
 ```
-
-/\* \*/
-9.06 min
-.form-control // pading and margin
-
-JS
-15.15
-
-checkpoint 27.50

@@ -1,104 +1,92 @@
 console.log("This is Project 1");
-
 const form = document.getElementById("form");
-
 const firstName = document.getElementById("firstName");
 const lastName = document.getElementById("lastName");
 const email = document.getElementById("email");
 const textArea = document.getElementById("message");
 const checkMark = document.getElementById("agreeToContact");
-
-const successMessage = document.getElementById("successMessage");
+const selectedQueryType = document.querySelectorAll('input[name="queryType"]');
+const testing = document.getElementById("testing");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-
-  checkInputs();
+  if (checkInputs()) {
+    document.querySelector(".displayMessage").style.display = "flex";
+  }
 });
 
 function checkInputs() {
-  // get the values from the inputs
-  const firstNameValue = firstName.value.trim();
-  const lastNameValue = lastName.value.trim();
-  const emailValue = email.value.trim();
-  const textAreaValue = textArea.value.trim();
-  const checkMarkValue = checkMark.checked;
+  let formIsValid = true;
 
-  let myArr = [];
+  formIsValid = validateField(
+    firstName,
+    "This Field is required",
+    (value) => value !== ""
+  );
+  formIsValid = validateField(
+    lastName,
+    "This Field is required",
+    (value) => value !== ""
+  );
+  formIsValid = validateField(
+    email,
+    "Please enter a valid email address",
+    isEmail
+  );
+  formIsValid = validateField(
+    textArea,
+    "This Field is required",
+    (value) => value !== ""
+  );
 
-  if (firstNameValue === "") {
-    setErrorFor(firstName, "This Field is required");
+  const selectedQuery = Array.from(selectedQueryType).find(
+    (radio) => radio.checked
+  );
+  if (!selectedQuery) {
+    setErrorFor(testing, "This Field is required");
+    formIsValid = false;
   } else {
-    setSuccessFor(firstName);
-    myArr.push(1);
+    setSuccessFor(testing);
   }
 
-  if (lastNameValue === "") {
-    setErrorFor(lastName, "This Field is required");
-  } else {
-    setSuccessFor(lastName);
-    myArr.push(1);
-  }
-
-  if (emailValue === "") {
-    setErrorFor(email, "This Field is required");
-  } else if (!isEmail(emailValue)) {
-    setErrorFor(email, "Please enter a valid email address");
-  } else {
-    setSuccessFor(email);
-    myArr.push(1);
-  }
-
-  if (textAreaValue === "") {
-    setErrorFor(textArea, "This Field is required");
-  } else {
-    setSuccessFor(textArea);
-    myArr.push(1);
-  }
-
-  if (!checkMarkValue) {
+  if (!checkMark.checked) {
     setErrorFor(
       checkMark,
       "To Submit this form, please consent to being contacted"
     );
+    formIsValid = false;
   } else {
     setSuccessFor(checkMark);
-    myArr.push(1);
   }
 
-  /*
-  if (!queryTypeValue) {
-    setErrorFor(queryType, "Please select a query type");
+  return formIsValid;
+}
+
+function validateField(field, errorMessage, validationFn) {
+  const value = field.value.trim();
+  if (validationFn(value)) {
+    setSuccessFor(field);
+    return true;
   } else {
-    setSuccessFor(queryType);
-    myArr.push(1);
-  }
-*/
-
-  if (myArr.length >= 5) {
-    console.log("form submited");
-    document.querySelector(".displayMessage").style.display = "flex";
+    setErrorFor(field, errorMessage);
+    return false;
   }
 }
 
 function setErrorFor(input, message) {
   const formControl = input.parentElement;
   const small = formControl.querySelector("small");
-
-  // add error message inside small
   small.innerText = message;
-
-  // add error class
   formControl.className = "form-group error";
+  input.setAttribute("aria-invalid", "true");
 }
 
 function setSuccessFor(input) {
   const formControl = input.parentElement;
   formControl.className = "form-group success";
+  input.removeAttribute("aria-invalid");
 }
 
 function isEmail(email) {
-  return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-    email
-  );
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
