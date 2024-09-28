@@ -43,7 +43,7 @@ function checkInputs() {
     (radio) => radio.checked
   );
   if (!selectedQuery) {
-    setErrorFor(testing, "This Field is required");
+    setErrorFor(testing, "Please select a query type");
     formIsValid = false;
   } else {
     setSuccessFor(testing);
