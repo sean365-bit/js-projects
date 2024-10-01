@@ -3,6 +3,7 @@ const form = document.getElementById("form");
 const firstName = document.getElementById("firstName");
 const lastName = document.getElementById("lastName");
 const email = document.getElementById("email");
+
 const textArea = document.getElementById("message");
 const checkMark = document.getElementById("agreeToContact");
 const selectedQueryType = document.querySelectorAll('input[name="queryType"]');
@@ -12,6 +13,7 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   if (checkInputs()) {
     document.querySelector(".displayMessage").style.display = "flex";
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 });
 

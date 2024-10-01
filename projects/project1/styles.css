@@ -30,7 +30,6 @@ body {
   justify-content: center;
 
   min-height: 100vh;
-  margin: 0;
 }
 
 .container {
@@ -42,7 +41,6 @@ body {
   justify-content: center;
   align-items: center;
   align-content: stretch;
-  min-height: 0;
 }
 
 .contactHeading {
@@ -236,12 +234,26 @@ input[type="radio"]:checked + .custom-radio::after {
   font-weight: 400;
 }
 
+/* keyframe for error animation */
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 /* Error form */
 #error {
   display: inline-block;
-
   color: var(--red);
-  visibility: hidden; /* */
+  visibility: hidden;
+
+  animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 .error input {
