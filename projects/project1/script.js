@@ -9,37 +9,53 @@ const checkMark = document.getElementById("agreeToContact");
 const selectedQueryType = document.querySelectorAll('input[name="queryType"]');
 const testing = document.getElementById("testing");
 
+const messageDiv = document.querySelector(".message");
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+
   if (checkInputs()) {
     document.querySelector(".displayMessage").style.display = "flex";
     window.scrollTo({ top: 0, behavior: "smooth" });
+
+    if (messageDiv) {
+      let name = firstName.value[0].toUpperCase() + firstName.value.slice(1);
+      messageDiv.innerHTML = `Thanks ${name} for completing the form. We'll be in touch soon!`;
+    }
   }
 });
 
 function checkInputs() {
   let formIsValid = true;
 
-  formIsValid = validateField(
-    firstName,
-    "This Field is required",
-    (value) => value !== ""
-  );
-  formIsValid = validateField(
-    lastName,
-    "This Field is required",
-    (value) => value !== ""
-  );
-  formIsValid = validateField(
-    email,
-    "Please enter a valid email address",
-    isEmail
-  );
-  formIsValid = validateField(
-    textArea,
-    "This Field is required",
-    (value) => value !== ""
-  );
+  const fields = [
+    {
+      element: firstName,
+      message: "This Field is required",
+      validator: (value) => value !== "",
+    },
+    {
+      element: lastName,
+      message: "This Field is required",
+      validator: (value) => value !== "",
+    },
+    {
+      element: email,
+      message: "Please enter a valid email address",
+      validator: isEmail,
+    },
+    {
+      element: textArea,
+      message: "This Field is required",
+      validator: (value) => value !== "",
+    },
+  ];
+
+  for (const field of fields) {
+    if (!validateField(field.element, field.message, field.validator)) {
+      formIsValid = false;
+    }
+  }
 
   const selectedQuery = Array.from(selectedQueryType).find(
     (radio) => radio.checked
