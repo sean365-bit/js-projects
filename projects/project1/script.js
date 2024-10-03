@@ -8,7 +8,6 @@ const textArea = document.getElementById("message");
 const checkMark = document.getElementById("agreeToContact");
 const selectedQueryType = document.querySelectorAll('input[name="queryType"]');
 const testing = document.getElementById("testing");
-
 const messageDiv = document.querySelector(".message");
 
 form.addEventListener("submit", (e) => {

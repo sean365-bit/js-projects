@@ -8,18 +8,41 @@
   </head>
 
   <body>
-    <nav></nav>
-    <header></header>
+    <nav class="nav-bar">
+      <h1>This is the main page</h1>
+    </nav>
+    <header>
+      <h2 class="page-heading">JavaScript projects</h2>
+    </header>
     <main>
-      <section>
-        <article>This is the main page</article>
+      <section class="introduction">
+        The following is a recopilation of some JavaScript projects I have done.
       </section>
 
+      <h2 class="projects-title">Projects :</h2>
       <section>
-        <h2>projects</h2>
-        <ul>
-          <li><a href="projects/project1/index.html">project 1</a></li>
-          <li><a href="projects/project2/index.html">project 2</a></li>
+        <ul class="flex-container">
+          <li class="card">
+            <div class="project-preview">
+              <img
+                src="./projects/project1/assets/Screenshot.png"
+                alt="Preview of Project 1"
+              />
+            </div>
+            <div class="project-information">
+              <h3 class="project-card-title">contact form</h3>
+              <p class="project-description">
+                Accessible contact form with validation.
+              </p>
+              <a
+                href="projects/project1/index.html"
+                target="_blank"
+                class="project-link"
+              >
+              </a>
+              <button class="preview-site-button">Preview Site</button>
+            </div>
+          </li>
         </ul>
       </section>
     </main>
