@@ -82,7 +82,7 @@ body {
   border-radius: 5px;
 
   width: 400px;
-  height: 400px;
+  height: 420px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -97,12 +97,12 @@ body {
 }
 
 .project-preview {
-  height: 60%;
+  height: 55%;
   width: 100%;
 }
 
 .project-information {
-  height: 40%;
+  height: 45%;
   width: 100%;
 }
 
