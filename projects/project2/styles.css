@@ -27,3 +27,150 @@ body {
 
   background-color: var(--slate100);
 }
+
+.mortgage-heading-title,
+.clear-all-button,
+.mortgage-form-label,
+.calculate-repayments-button {
+  text-transform: capitalize;
+}
+
+.mortgage-form-label,
+.legend-title {
+  color: var(--slate500);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 500;
+}
+
+/* mortgage box */
+.mortgage-box-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.mortgage-box {
+  height: 550px;
+  width: 800px;
+  display: flex;
+  border-radius: 15px;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* mortgage calculator */
+.mortgage-calculator {
+  flex: 1; /* Take up all available space */
+  padding: 25px;
+  background: var(--white);
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* color */
+.mortgage-heading-title,
+.calculate-repayments-button {
+  color: var(--slate900);
+}
+
+.clear-all-button {
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  background-color: var(--white);
+  text-decoration: underline;
+  color: var(--slate500);
+  font-size: 1rem;
+}
+
+.mortgage-form {
+  height: 90%;
+  overflow: auto;
+}
+
+#mortgage-amount,
+#mortgage-term,
+#interest-rate {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  height: 40px;
+  font-size: 1.3rem;
+}
+
+#mortgage-amount,
+#mortgage-term,
+#interest-rate,
+.repayment,
+.interest-only {
+  border: 1px solid var(--slate900);
+  border-radius: 5px;
+}
+
+#mortgage-amount {
+  width: 100%;
+}
+
+#mortgage-term,
+#interest-rate {
+  width: 100%;
+}
+
+.mortgage-term-and-rate-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.legend-title {
+  margin-bottom: 10px;
+}
+
+.radio-selection-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.repayment,
+.interest-only {
+  height: 45px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0 10px;
+}
+
+.interest-only label,
+.repayment label {
+  cursor: pointer;
+}
+
+.calculate-repayments-button {
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  background-color: var(--lime);
+  text-align: center;
+  border-radius: 35px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  width: 80%;
+}
+
+/* mortgage results*/
+.mortgage-results {
+  background: var(--slate900);
+  flex: 1;
+}

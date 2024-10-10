@@ -10,15 +10,87 @@
   <body>
     <nav></nav>
     <header></header>
-    <main>
-      <section>
-        <article></article>
+    <main class="mortgage-box-container">
+      <section class="mortgage-box">
+        <div class="mortgage-calculator">
+          <div class="heading">
+            <h2 class="mortgage-heading-title">Mortgage calculator</h2>
+            <button class="clear-all-button">clear all</button>
+          </div>
+
+          <div class="mortgage-form">
+            <form>
+              <label class="mortgage-form-label" for="mortgage-amount"
+                >mortgage amount</label
+              ><br />
+              <input
+                type="text"
+                name="mortgage-amount"
+                id="mortgage-amount"
+                required
+              />
+
+              <div class="mortgage-term-and-rate-container">
+                <div class="one">
+                  <label class="mortgage-form-label" for="mortgage-term"
+                    >mortgage term</label
+                  >
+                  <input
+                    type="text"
+                    name="mortgage-term"
+                    id="mortgage-term"
+                    required
+                  />
+                </div>
+
+                <div class="two">
+                  <label class="mortgage-form-label" for="interest-rate"
+                    >interest rate</label
+                  >
+                  <input
+                    type="text"
+                    name="interest-rate"
+                    id="interest-rate"
+                    required
+                  />
+                </div>
+              </div>
+
+              <fieldset>
+                <legend class="legend-title">Mortgage Type</legend>
+
+                <div class="radio-selection-container">
+                  <div class="repayment">
+                    <input
+                      type="radio"
+                      name="mortgage-type"
+                      id="repayment"
+                      value="repayment"
+                    />
+                    <label for="repayment">Repayment</label>
+                  </div>
+
+                  <div class="interest-only">
+                    <input
+                      type="radio"
+                      name="mortgage-type"
+                      id="interest-only"
+                      value="interest-only"
+                    />
+                    <label for="interest-only">Interest Only</label>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+            <button class="calculate-repayments-button">
+              calculate repayments
+            </button>
+          </div>
+        </div>
+
+        <div class="mortgage-results"></div>
       </section>
-
-      <section></section>
     </main>
-
-    <section></section>
 
     <footer></footer>
     <script src="script.js"></script>
