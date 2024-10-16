@@ -63,7 +63,7 @@ body {
 /* mortgage calculator */
 .mortgage-calculator {
   flex: 1; /* Take up all available space */
-  padding: 25px;
+  padding: 20px;
   background: var(--white);
   border-radius: 15px 0 0 15px;
 }
@@ -90,9 +90,15 @@ body {
   font-size: 1rem;
 }
 
+/*
+=======
+Form
+=======
+*/
 .mortgage-form {
   height: 90%;
   overflow: auto;
+  padding: 5px;
 }
 
 #mortgage-amount,
@@ -100,26 +106,24 @@ body {
 #interest-rate {
   margin-top: 10px;
   margin-bottom: 20px;
-  height: 40px;
+  height: 2.75rem; /* */
+  width: 100%;
+
   font-size: 1.3rem;
 }
 
-#mortgage-amount,
-#mortgage-term,
-#interest-rate,
+input,
 .repayment,
 .interest-only {
-  border: 1px solid var(--slate900);
+  padding: 10px;
+  border: 1.5px solid var(--slate300);
   border-radius: 5px;
+  transition: border-color 0.3s ease; /* Smooth transition */
 }
 
-#mortgage-amount {
-  width: 100%;
-}
-
-#mortgage-term,
-#interest-rate {
-  width: 100%;
+input:focus {
+  border-color: hsl(61, 70%, 52%);
+  outline: none;
 }
 
 .mortgage-term-and-rate-container {
@@ -159,6 +163,11 @@ fieldset {
   cursor: pointer;
 }
 
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
 .calculate-repayments-button {
   border: none;
   padding: 15px;
@@ -168,7 +177,7 @@ fieldset {
   border-radius: 35px;
   font-size: 1.1rem;
   font-weight: 600;
-  width: 80%;
+  width: 100%;
 
   display: flex;
   justify-content: center;

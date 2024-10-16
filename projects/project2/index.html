@@ -8,8 +8,6 @@
   </head>
 
   <body>
-    <nav></nav>
-    <header></header>
     <main class="mortgage-box-container">
       <section class="mortgage-box">
         <div class="mortgage-calculator">
@@ -20,15 +18,22 @@
 
           <div class="mortgage-form">
             <form>
-              <label class="mortgage-form-label" for="mortgage-amount"
-                >mortgage amount</label
-              ><br />
-              <input
-                type="text"
-                name="mortgage-amount"
-                id="mortgage-amount"
-                required
-              />
+              <div class="form-row">
+                <label class="mortgage-form-label" for="mortgage-amount"
+                  >mortgage amount</label
+                >
+                <!-- <br> -->
+                <input
+                  type="text"
+                  name="mortgage-amount"
+                  id="mortgage-amount"
+                  class="form-input amount-input"
+                  placeholder="Ex. 100,000"
+                />
+                <!-- class="form-input amount-input" -->
+                <p class="icon-inside-input amount">&#163;</p>
+                <span class="error-message"></span>
+              </div>
 
               <div class="mortgage-term-and-rate-container">
                 <div class="one">
@@ -39,6 +44,7 @@
                     type="text"
                     name="mortgage-term"
                     id="mortgage-term"
+                    placeholder="Ex. 10"
                     required
                   />
                 </div>
@@ -51,6 +57,7 @@
                     type="text"
                     name="interest-rate"
                     id="interest-rate"
+                    placeholder="Ex. 1"
                     required
                   />
                 </div>
@@ -81,14 +88,16 @@
                   </div>
                 </div>
               </fieldset>
-              <button class="calculate-repayments-button">
-                <img
-                  class="icon-inside-button"
-                  src="./assets/icon-calculator.svg"
-                  alt="icon"
-                />
-                calculate repayments
-              </button>
+              <div class="button-container">
+                <button class="calculate-repayments-button">
+                  <img
+                    class="icon-inside-button"
+                    src="./assets/icon-calculator.svg"
+                    alt="icon"
+                  />
+                  calculate repayments
+                </button>
+              </div>
             </form>
           </div>
         </div>
