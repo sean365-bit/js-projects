@@ -18,7 +18,7 @@
 
           <div class="mortgage-form">
             <form>
-              <div class="form-row">
+              <div class="one">
                 <label class="mortgage-form-label" for="mortgage-amount"
                   >mortgage amount</label
                 >
@@ -27,16 +27,16 @@
                   type="text"
                   name="mortgage-amount"
                   id="mortgage-amount"
-                  class="form-input amount-input"
+                  class="form-input"
                   placeholder="Ex. 100,000"
                 />
                 <!-- class="form-input amount-input" -->
-                <p class="icon-inside-input amount">&#163;</p>
+                <p class="icon-inside-input first-input">&#163;</p>
                 <span class="error-message"></span>
               </div>
 
               <div class="mortgage-term-and-rate-container">
-                <div class="one">
+                <div class="two">
                   <label class="mortgage-form-label" for="mortgage-term"
                     >mortgage term</label
                   >
@@ -47,9 +47,15 @@
                     placeholder="Ex. 10"
                     required
                   />
+                  <p
+                    class="icon-inside-input second-input input-for-second-and-third"
+                  >
+                    years
+                  </p>
+                  <span class="error-message"></span>
                 </div>
 
-                <div class="two">
+                <div class="three">
                   <label class="mortgage-form-label" for="interest-rate"
                     >interest rate</label
                   >
@@ -60,6 +66,12 @@
                     placeholder="Ex. 1"
                     required
                   />
+                  <p
+                    class="icon-inside-input third-input input-for-second-and-third"
+                  >
+                    %
+                  </p>
+                  <span class="error-message"></span>
                 </div>
               </div>
 

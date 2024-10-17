@@ -37,7 +37,7 @@ body {
 
 .mortgage-form-label,
 .legend-title {
-  color: var(--slate500);
+  color: var(--slate700);
   font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 500;
 }
@@ -121,9 +121,64 @@ input,
   transition: border-color 0.3s ease; /* Smooth transition */
 }
 
+.form-input {
+  padding-left: 45px;
+}
+
 input:focus {
   border-color: hsl(61, 70%, 52%);
   outline: none;
+}
+
+.one,
+.two,
+.three {
+  height: 100px;
+}
+
+.icon-inside-input {
+  height: 2.75rem; /* */
+
+  border-top: 1.5px solid var(--slate300);
+  border-bottom: 1.5px solid var(--slate300);
+  transition: border-color 0.3s ease;
+
+  background-color: var(--slate100);
+  color: var(--slate500);
+  font-weight: bolder;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  margin: 0;
+  padding: 0;
+}
+
+.first-input {
+  top: -64px;
+  width: 10%;
+
+  border-radius: 5px 0 0 5px;
+  border-left: 1.5px solid var(--slate300);
+}
+
+.input-for-second-and-third {
+  top: -64px;
+  right: -150px;
+
+  border-radius: 0 5px 5px 0;
+  border-right: 1.5px solid var(--slate300);
+}
+
+.second-input {
+  width: 27%;
+}
+
+.third-input {
+  width: 23%;
 }
 
 .mortgage-term-and-rate-container {
