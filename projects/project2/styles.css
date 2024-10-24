@@ -121,6 +121,11 @@ input,
   transition: border-color 0.3s ease; /* Smooth transition */
 }
 
+input::placeholder {
+  color: var(--slate500);
+  font-size: 1.1rem;
+}
+
 .form-input {
   padding-left: 45px;
 }
@@ -167,7 +172,7 @@ input:focus {
 
 .input-for-second-and-third {
   top: -64px;
-  right: -150px;
+  right: -151px;
 
   border-radius: 0 5px 5px 0;
   border-right: 1.5px solid var(--slate300);
@@ -187,6 +192,7 @@ input:focus {
   gap: 20px;
 }
 
+/* */
 fieldset {
   border: none;
   padding: 0;
@@ -205,6 +211,37 @@ fieldset {
   gap: 20px;
 }
 
+input[type="radio"] {
+  display: none;
+}
+
+/* Add custom radio button design */
+.radio-label::before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1.5px solid var(--slate300);
+  margin-right: 15px;
+  margin-top: 10px;
+  background-color: #fff;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Checked state */
+input[type="radio"]:checked + .radio-label::before {
+  background-color: var(--lime);
+  border-color: var(--lime);
+}
+
+/* Hover state */
+.repayment:hover,
+.interest-only:hover,
+input[type="radio"]:focus + .radio-label::before {
+  border-color: var(--lime);
+}
+
 .repayment,
 .interest-only {
   height: 45px;
@@ -217,6 +254,12 @@ fieldset {
 .repayment label {
   cursor: pointer;
 }
+
+/*
+=======
+Button
+=======
+*/
 
 .button-container {
   display: flex;
