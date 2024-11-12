@@ -18,59 +18,55 @@
 
           <div class="mortgage-form">
             <form>
-              <div class="one">
+              <div class="input-field">
                 <label class="mortgage-form-label" for="mortgage-amount"
                   >mortgage amount</label
                 >
-                <!-- <br> -->
-                <input
-                  type="text"
-                  name="mortgage-amount"
-                  id="mortgage-amount"
-                  class="form-input"
-                  placeholder="Ex. 100,000"
-                />
-                <!-- class="form-input amount-input" -->
-                <p class="icon-inside-input first-input">&#163;</p>
+                <div class="input-group input-group-for-left">
+                  <input
+                    type="text"
+                    name="mortgage-amount"
+                    id="mortgage-amount"
+                    placeholder="Ex. 100,000"
+                  />
+                  <span class="icon-inside-input icon-left">&#163;</span>
+                </div>
+
                 <span class="error-message"></span>
               </div>
 
               <div class="mortgage-term-and-rate-container">
-                <div class="two">
-                  <label class="mortgage-form-label" for="mortgage-term"
+                <div class="input-field">
+                  <label class="mortgage-form-label" for="mortgage-amount"
                     >mortgage term</label
                   >
-                  <input
-                    type="text"
-                    name="mortgage-term"
-                    id="mortgage-term"
-                    placeholder="Ex. 10"
-                    required
-                  />
-                  <p
-                    class="icon-inside-input second-input input-for-second-and-third"
-                  >
-                    years
-                  </p>
+                  <div class="input-group input-group-for-right">
+                    <input
+                      type="text"
+                      name="mortgage-amount"
+                      id="mortgage-amount-right"
+                      placeholder="Ex. 30"
+                    />
+                    <span class="icon-inside-input icon-right">years</span>
+                  </div>
+
                   <span class="error-message"></span>
                 </div>
 
-                <div class="three">
-                  <label class="mortgage-form-label" for="interest-rate"
-                    >interest rate</label
+                <div class="input-field">
+                  <label class="mortgage-form-label" for="mortgage-amount"
+                    >mortgage rate</label
                   >
-                  <input
-                    type="text"
-                    name="interest-rate"
-                    id="interest-rate"
-                    placeholder="Ex. 1"
-                    required
-                  />
-                  <p
-                    class="icon-inside-input third-input input-for-second-and-third"
-                  >
-                    %
-                  </p>
+                  <div class="input-group input-group-for-right">
+                    <input
+                      type="text"
+                      name="mortgage-amount"
+                      id="mortgage-amount-right"
+                      placeholder="Ex. 5"
+                    />
+                    <span class="icon-inside-input icon-right">%</span>
+                  </div>
+
                   <span class="error-message"></span>
                 </div>
               </div>
@@ -78,27 +74,29 @@
               <fieldset>
                 <legend class="legend-title">Mortgage Type</legend>
                 <div class="radio-selection-container">
-                  <div class="repayment">
+                  <section class="repayment">
                     <input
                       type="radio"
                       name="mortgage-type"
-                      id="repayment"
-                      value="repayment"
+                      id="radio-selection-one"
+                      class="custom-radio"
                     />
-                    <label class="radio-label" for="repayment">Repayment</label>
-                  </div>
+                    <label class="cursor" for="radio-selection-one"
+                      >Repayment</label
+                    >
+                  </section>
 
-                  <div class="interest-only">
+                  <section class="interest-only">
                     <input
                       type="radio"
                       name="mortgage-type"
-                      id="interest-only"
-                      value="interest-only"
+                      id="radio-selection-two"
+                      class="custom-radio"
                     />
-                    <label class="radio-label" for="interest-only"
+                    <label class="cursor" for="radio-selection-two"
                       >Interest Only</label
                     >
-                  </div>
+                  </section>
                 </div>
               </fieldset>
               <div class="button-container">
