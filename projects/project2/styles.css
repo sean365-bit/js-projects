@@ -147,8 +147,8 @@ Form
   padding-left: 45px;
 }
 
-#mortgage-amount-right,
-#mortgage-amount-right-2 {
+#mortgage-term,
+#mortgage-rate {
   padding-left: 10px;
 }
 
@@ -178,8 +178,8 @@ Form
 }
 
 #mortgage-amount::placeholder,
-#mortgage-amount-right::placeholder,
-#mortgage-amount-right-2::placeholder {
+#mortgage-term::placeholder,
+#mortgage-rate::placeholder {
   color: var(--slate500);
   font-size: 1rem;
 }
@@ -232,6 +232,8 @@ input[type="radio"] {
   background-color: #e8e8e8;
   border-radius: 50%;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+  margin-left: 10px;
 }
 
 .custom-radio:focus-visible {

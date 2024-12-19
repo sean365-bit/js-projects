@@ -17,7 +17,7 @@
           </div>
 
           <div class="mortgage-form">
-            <form>
+            <form id="form">
               <div class="input-field">
                 <label class="mortgage-form-label" for="mortgage-amount"
                   >mortgage amount</label
@@ -38,14 +38,14 @@
 
               <div class="mortgage-term-and-rate-container">
                 <div class="input-field">
-                  <label class="mortgage-form-label" for="mortgage-amount-right"
+                  <label class="mortgage-form-label" for="mortgage-term"
                     >mortgage term</label
                   >
                   <div class="input-group input-group-for-right">
                     <input
                       type="text"
-                      name="mortgage-amount-right"
-                      id="mortgage-amount-right"
+                      name="mortgage-term"
+                      id="mortgage-term"
                       class="mortgage-input"
                       placeholder="Ex. 30"
                     />
@@ -56,16 +56,14 @@
                 </div>
 
                 <div class="input-field">
-                  <label
-                    class="mortgage-form-label"
-                    for="mortgage-amount-right-2"
+                  <label class="mortgage-form-label" for="mortgage-rate"
                     >mortgage rate</label
                   >
                   <div class="input-group input-group-for-right">
                     <input
                       type="text"
-                      name="mortgage-amount-right-2"
-                      id="mortgage-amount-right-2"
+                      name="mortgage-rate"
+                      id="mortgage-rate"
                       class="mortgage-input"
                       placeholder="Ex. 5"
                     />
@@ -105,7 +103,7 @@
                 </div>
               </fieldset>
               <div class="button-container">
-                <button class="calculate-repayments-button">
+                <button class="calculate-repayments-button" type="submit">
                   <img
                     class="icon-inside-button"
                     src="./assets/icon-calculator.svg"
