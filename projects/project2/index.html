@@ -13,9 +13,11 @@
         <div class="mortgage-calculator">
           <div class="heading">
             <h2 class="mortgage-heading-title">Mortgage calculator</h2>
-            <button class="clear-all-button">clear all</button>
+            <button class="clear-all-button" id="reset-button">
+              clear all
+            </button>
           </div>
-
+          <!-- 1 Field -->
           <div class="mortgage-form">
             <form id="form">
               <div class="input-field">
@@ -32,8 +34,7 @@
                   />
                   <span class="icon-inside-input icon-left">&#163;</span>
                 </div>
-
-                <span class="error-message"></span>
+                <small id="mortgage-amount-error" class="error-message"></small>
               </div>
 
               <div class="mortgage-term-and-rate-container">
@@ -51,8 +52,7 @@
                     />
                     <span class="icon-inside-input icon-right">years</span>
                   </div>
-
-                  <span class="error-message"></span>
+                  <small id="mortgage-term-error" class="error-message"></small>
                 </div>
 
                 <div class="input-field">
@@ -70,7 +70,7 @@
                     <span class="icon-inside-input icon-right">%</span>
                   </div>
 
-                  <span class="error-message"></span>
+                  <small id="mortgage-rate-error" class="error-message"></small>
                 </div>
               </div>
 
