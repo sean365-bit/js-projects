@@ -1,23 +1,32 @@
-console.log("This is Project 2");
+// console.log("This is Project 2"); // £
 
 const form = document.getElementById("form");
 const resetButton = document.getElementById("reset-button");
+const overlay = document.querySelector(".overlay");
+const startButton = document.getElementById("startOverlay");
+const stopButton = document.getElementById("stopOverlay");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   validateForm();
 
   function validateForm() {
-    const mortgageAmount = document.getElementById("mortgage-amount").value;
-    const mortgageTerm = document.getElementById("mortgage-term").value;
-    const mortgageRate = document.getElementById("mortgage-rate").value;
+    const mortgageAmount = document
+      .getElementById("mortgage-amount")
+      .value.trim();
+    const mortgageTerm = document.getElementById("mortgage-term").value.trim();
+    const mortgageRate = document.getElementById("mortgage-rate").value.trim();
 
-    //
+    const monthlyRepayment = calculateMonthlyRepayment(
+      mortgageAmount,
+      mortgageRate,
+      mortgageTerm
+    );
+
     const mortgageAmountErr = document.getElementById("mortgage-amount-error");
     const mortgageTermErr = document.getElementById("mortgage-term-error");
     const mortgageRateErr = document.getElementById("mortgage-rate-error");
 
-    //
     mortgageAmountErr.textContent = "";
     mortgageTermErr.textContent = "";
     mortgageRateErr.textContent = "";
@@ -40,7 +49,13 @@ form.addEventListener("submit", (e) => {
     }
 
     if (isValid) {
-      alert("Form submitted successfully!");
+      // Add the 'active' class to start the overlay effect
+      overlay.classList.add("active");
+
+      console.log(monthlyRepayment);
+      console.log(`Your montly repayment:  ${monthlyRepayment[0]}`);
+      console.log(`Total repay over the term:  ${monthlyRepayment[1]}`);
+      console.log(`${monthlyRepayment[2]}`);
       return true;
     } else {
       return false;
@@ -49,6 +64,7 @@ form.addEventListener("submit", (e) => {
 });
 
 resetButton.addEventListener("click", () => {
+  overlay.classList.remove("active");
   document.getElementById("mortgage-amount-error").textContent = "";
   document.getElementById("mortgage-term-error").textContent = "";
   document.getElementById("mortgage-rate-error").textContent = "";
@@ -95,34 +111,3 @@ function calculateMonthlyRepayment(principal, annualInterestRate, years) {
     interestOnly,
   ];
 }
-
-/*
-// Example usage
-const principal = 300000; // Mortgage amount in dollars
-const annualInterestRate = 5.25; // Annual interest rate in percentage
-const years = 25; // Mortgage term in years
-
-const monthlyRepayment = calculateMonthlyRepayment(
-  principal,
-  annualInterestRate,
-  years
-);
-*/
-
-/*
-// 2 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  /*
-  //   console.log(`${monthlyRepayment}`);
-  console.log(`Your montly repayment:  ${monthlyRepayment[0]}`);
-  console.log(`Total repay over the term:  ${monthlyRepayment[1]}`);
-  console.log(`${monthlyRepayment[2]}`); */
-/*
-  const mortgageAmountValue = mortgageAmount.value.trim();
-
-  console.log(mortgageAmountValue);
-});
-*/
-
-// £

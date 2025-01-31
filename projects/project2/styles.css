@@ -301,10 +301,13 @@ Button
 Mortgage results - right
 =======
 */
+
 .mortgage-results {
   background: var(--slate900);
   flex: 1;
   border-radius: 0 15px 15px 85px;
+
+  position: relative;
 }
 
 .ilustration {
@@ -332,6 +335,47 @@ Mortgage results - right
   text-align: center;
 }
 
+/*
+=======
+Overlay
+=======
+*/
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--slate900);
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  transition: 0.5s ease;
+}
+
+.overlay.active {
+  width: 100%;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*  white-space: nowrap; */
+}
+
+.text h2 {
+  margin-bottom: 25px;
+}
+/*
+=======
+Keyframes
+=======
+*/
 /* keyframe for error animation */
 @keyframes slide-in-left {
   0% {
