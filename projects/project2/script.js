@@ -1,10 +1,18 @@
-// console.log("This is Project 2"); // £
+// console.log("This is Project 2");
 
 const form = document.getElementById("form");
 const resetButton = document.getElementById("reset-button");
 const overlay = document.querySelector(".overlay");
 const startButton = document.getElementById("startOverlay");
 const stopButton = document.getElementById("stopOverlay");
+const repaymentResults = document.getElementById("repaymentResults");
+const totalResults = document.getElementById("totalResults");
+
+overlay.classList.add("active");
+// repaymentResults.textContent = "£ XD testing";
+// totalResults.textContent = "£   testing";
+
+// overlay.classList.add("active");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -51,11 +59,13 @@ form.addEventListener("submit", (e) => {
     if (isValid) {
       // Add the 'active' class to start the overlay effect
       overlay.classList.add("active");
-
       console.log(monthlyRepayment);
       console.log(`Your montly repayment:  ${monthlyRepayment[0]}`);
       console.log(`Total repay over the term:  ${monthlyRepayment[1]}`);
       console.log(`${monthlyRepayment[2]}`);
+      repaymentResults.textContent = `£ ${monthlyRepayment[0]}`;
+      totalResults.textContent = `£ ${monthlyRepayment[1]}`;
+
       return true;
     } else {
       return false;
