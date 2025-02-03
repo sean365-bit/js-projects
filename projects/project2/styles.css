@@ -37,7 +37,7 @@ body {
 }
 
 .mortgage-box {
-  height: 550px;
+  height: 560px;
   width: 900px;
   display: flex;
   border-radius: 15px;
@@ -97,6 +97,8 @@ Form
 
   display: flex;
   flex-direction: column;
+
+  margin-bottom: 10px;
 }
 
 .mortgage-form-label,
@@ -301,7 +303,6 @@ Button
 Mortgage results - right
 =======
 */
-
 .mortgage-results {
   background: var(--slate900);
   flex: 1;
@@ -351,6 +352,8 @@ Overlay
   width: 0;
   height: 100%;
   transition: 0.5s ease;
+
+  border-radius: 0 15px 15px 85px;
 }
 
 .overlay.active {
@@ -373,13 +376,20 @@ Overlay
   /*  white-space: nowrap; */
 
   margin: 30px;
-  border: 3px solid red;
+}
+
+.title-flex {
+  display: flex;
+  justify-content: left;
+
+  width: 100%;
 }
 
 .results-box h3 {
   margin-bottom: 25px;
   color: var(--slate100);
 }
+
 .text {
   color: var(--slate300);
   font-size: 16px;
@@ -402,27 +412,37 @@ Overlay
   font-size: 2rem;
   font-weight: bold;
 }
+
+/* */
 .show-results {
-  height: 200px;
+  height: 250px;
   width: 355px;
 
   border-top: 4px solid var(--lime);
   border-radius: 5px;
 
   background-color: #0e2431;
+  padding: 20px;
 }
 
 .main-result {
   margin-bottom: 15px;
 }
 
-.divisor {
-  width: 80%;
-  border-bottom: 0.5px solid var(--white);
-  text-align: center;
+.divisor-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
+
+.separator {
+  height: 1px;
+  background-color: var(--slate700);
+  width: 95%;
+}
+
 /*
 =======
 Keyframes

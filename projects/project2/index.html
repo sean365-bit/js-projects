@@ -74,6 +74,7 @@
                 </div>
               </div>
 
+              <!-- /* */ */ */ -->
               <fieldset>
                 <legend class="legend-title">Mortgage Type</legend>
                 <div class="radio-selection-container">
@@ -83,6 +84,7 @@
                       name="mortgage-type"
                       id="radio-selection-one"
                       class="custom-radio"
+                      value="repayment"
                     />
                     <label class="cursor" for="radio-selection-one"
                       >Repayment</label
@@ -95,12 +97,14 @@
                       name="mortgage-type"
                       id="radio-selection-two"
                       class="custom-radio"
+                      value="interest"
                     />
                     <label class="cursor" for="radio-selection-two"
                       >Interest Only</label
                     >
                   </section>
                 </div>
+                <small id="mortgage-type-error" class="error-message"></small>
               </fieldset>
               <div class="button-container">
                 <button class="calculate-repayments-button" type="submit">
@@ -128,7 +132,9 @@
           <!-- overlay -->
           <div class="overlay">
             <div class="results-box">
-              <h3>Your results</h3>
+              <div class="title-flex">
+                <h3>Your results</h3>
+              </div>
 
               <p class="text">
                 Your results are shown below based on the information you
@@ -142,7 +148,9 @@
                   <p class="monthly-repayment-result" id="repaymentResults"></p>
                 </div>
 
-                <div class="divisor"></div>
+                <div class="divisor-container">
+                  <div class="separator"></div>
+                </div>
 
                 <div>
                   <p class="text-boxes">Total you'll repay over the term</p>
