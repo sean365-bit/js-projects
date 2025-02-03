@@ -64,7 +64,6 @@ Mortgage calculator - left
   margin-bottom: 20px;
 }
 
-/* color */
 .mortgage-heading-title,
 .calculate-repayments-button {
   color: var(--slate900);
@@ -103,7 +102,7 @@ Form
 
 .mortgage-form-label,
 .legend-title {
-  width: 75%; /* */
+  width: 75%;
 
   margin-bottom: 10px;
   text-transform: capitalize;
@@ -118,16 +117,16 @@ Form
 
   border: 1.8px solid var(--slate300);
   border-radius: 5px;
-  transition: border-color 0.3s ease; /* Smooth transition */
+  transition: border-color 0.3s ease;
 }
 
 .input-group-for-left {
-  justify-content: left; /* position of icon */
+  justify-content: left;
 }
 
 .input-group-for-right {
-  justify-content: right; /* position of icon */
-  width: 100%; /* */
+  justify-content: right;
+  width: 100%;
 }
 
 .input-group:focus-within,
@@ -196,7 +195,7 @@ Form
   padding: 5px;
   border: 1.8px solid var(--slate300);
   border-radius: 5px;
-  transition: border-color 0.3s ease; /* Smooth transition */
+  transition: border-color 0.3s ease;
 }
 
 .mortgage-term-and-rate-container {
@@ -209,8 +208,9 @@ Form
 fieldset {
   border: none;
   padding: 0;
-  margin: 0;
-  margin-bottom: 20px;
+  margin: 0 0 20px 0;
+  display: block;
+  width: 100%;
 }
 
 .radio-selection-container {
@@ -368,20 +368,12 @@ Overlay
 
   color: white;
   font-size: 20px;
-
-  /* position: absolute; 
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
-  /*  white-space: nowrap; */
-
   margin: 30px;
 }
 
 .title-flex {
   display: flex;
   justify-content: left;
-
   width: 100%;
 }
 
@@ -413,7 +405,6 @@ Overlay
   font-weight: bold;
 }
 
-/* */
 .show-results {
   height: 250px;
   width: 355px;
@@ -459,15 +450,6 @@ Keyframes
     opacity: 1;
   }
 }
-
-/*
-#error {
-  display: inline-block;
-  color: var(--red);
-  /*   visibility: hidden; */
-/* animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-} 
-*/
 
 .error-message {
   color: var(--red);
