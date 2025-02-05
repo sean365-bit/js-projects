@@ -1,0 +1,119 @@
+/* 
+The designs were created to the following widths:
+- Mobile: 375px
+- Desktop: 1440px 
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+
+:root {
+  --error: hsl(0, 100%, 66%);
+  --active-input: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+  --white: hsl(0, 0%, 100%);
+  --Light-grayish-violet: hsl(270, 3%, 87%);
+  --Dark-grayish-violet: hsl(279, 6%, 55%);
+  --Very-dark-violet: hsl(278, 68%, 11%);
+
+  --font-size: 18px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Space Grotesk", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.split-container {
+  display: flex;
+  height: 100vh;
+}
+
+.left-side {
+  flex: 3;
+  /* background-color: #f44336; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  background-image: url(./assets/bg-main-desktop.png);
+}
+
+.right-side {
+  flex: 7;
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--Very-dark-violet);
+  font-size: 24px;
+}
+
+form {
+  /* height: 450px;
+  width: 400px; */
+  border: 3px solid red;
+
+  display: flex;
+  flex-direction: column;
+  /* gap: 15px; */
+  padding: 20px;
+}
+
+label {
+  text-transform: uppercase;
+  font-size: var(--font-size);
+
+  margin-bottom: 20px;
+}
+
+input::placeholder {
+  font-weight: bold;
+  color: var(--Light-grayish-violet);
+}
+
+.input {
+  /*   border: 2px solid green; */
+
+  margin-bottom: 20px;
+
+  display: flex;
+  flex-direction: column; /* same as form */
+}
+
+.button {
+  margin-top: 20px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--Very-dark-violet);
+  color: var(--white);
+
+  text-align: center;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .split-container {
+    flex-direction: column;
+  }
+
+  .left-side {
+    flex: 3;
+  }
+
+  .right-side {
+    flex: 7;
+  }
+}
