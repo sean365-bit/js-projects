@@ -10,8 +10,8 @@
     <div class="split-container">
       <div class="left-side image"></div>
       <div class="right-side">
-        <form  id="form">
-          <div class="input">
+        <form id="form">
+          <div class="input-name-number">
             <label for="cardholder">cardholder name</label>
             <input
               type="text"
@@ -21,7 +21,7 @@
             />
           </div>
 
-          <div class="input">
+          <div class="input-name-number">
             <label for="card-number">card number</label>
             <input
               type="text"
@@ -31,16 +31,29 @@
             />
           </div>
 
-          <label for="expiration">exp. date(mm/yy)</label>
-          <input
-            type="text"
-            name="expiration"
-            id="expiration"
-            placeholder="MM"
-          />
+          <div class="last-3-box">
+            <div class="date">
+              <label for="expiration">exp. date(mm/yy)</label>
+              <input
+                type="text"
+                name="expiration"
+                id="expiration"
+                placeholder="MM"
+              />
 
-          <label for="cvc">cvc</label>
-          <input type="text" name="cvc" id="cvc" placeholder="e.g. 123" />
+              <input
+                type="text"
+                name="expiration"
+                id="expiration"
+                placeholder="YY"
+              />
+            </div>
+
+            <div class="cvc-input">
+              <label for="cvc">cvc</label>
+              <input type="text" name="cvc" id="cvc" placeholder="e.g. 123" />
+            </div>
+          </div>
 
           <button class="button" type="submit">Confirm</button>
         </form>

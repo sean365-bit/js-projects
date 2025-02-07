@@ -15,6 +15,7 @@ The designs were created to the following widths:
   --Very-dark-violet: hsl(278, 68%, 11%);
 
   --font-size: 18px;
+  --input-height: 40px;
 }
 
 * {
@@ -37,14 +38,10 @@ body {
 
 .left-side {
   flex: 3;
-  /* background-color: #f44336; */
+  background-color: #21092f;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.image {
-  background-image: url(./assets/bg-main-desktop.png);
 }
 
 .right-side {
@@ -57,37 +54,77 @@ body {
   font-size: 24px;
 }
 
+.image {
+  background-image: url(./assets/bg-main-desktop.png);
+}
+
+/*
+=======
+form
+=======
+*/
 form {
-  /* height: 450px;
-  width: 400px; */
+  /*   height: 550px; */
+  width: 500px;
   border: 3px solid red;
 
   display: flex;
   flex-direction: column;
-  /* gap: 15px; */
   padding: 20px;
 }
 
 label {
   text-transform: uppercase;
   font-size: var(--font-size);
-
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 input::placeholder {
-  font-weight: bold;
   color: var(--Light-grayish-violet);
 }
 
-.input {
-  /*   border: 2px solid green; */
+input {
+  height: var(--input-height);
+  font-size: 18px;
 
+  border-radius: 5px;
+  border: 1px solid var(--Light-grayish-violet);
+  outline: none;
+  padding-left: 10px;
+}
+
+.input-name-number {
   margin-bottom: 20px;
 
   display: flex;
   flex-direction: column; /* same as form */
 }
+
+/*
+=======
+expiration
+=======
+*/
+
+.last-3-box {
+  /*he */
+  border: 2px solid brown;
+
+  display: flex;
+  gap: 10px;
+}
+
+.date {
+  border: 2px solid green;
+}
+.cvc-input {
+  border: 2px solid yellow;
+}
+/*
+=======
+Button
+=======
+*/
 
 .button {
   margin-top: 20px;
@@ -98,9 +135,10 @@ input::placeholder {
   color: var(--white);
 
   text-align: center;
-  border-radius: 15px;
+  border-radius: 5px;
   font-size: 1.1rem;
   width: 100%;
+  height: 50px;
 }
 
 /* Responsive Design */
@@ -115,5 +153,9 @@ input::placeholder {
 
   .right-side {
     flex: 7;
+  }
+
+  .image {
+    background: url(./assets/bg-main-mobile.png) no-repeat center center / cover;
   }
 }
