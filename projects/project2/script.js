@@ -82,12 +82,6 @@ form.addEventListener("submit", (e) => {
         repaymentResults.textContent = ``;
         totalResults.textContent = `£ ${monthlyRepayment[2]}`;
       }
-
-      //console.log(monthlyRepayment);
-      //console.log(`Your montly repayment:  ${monthlyRepayment[0]}`);
-      // console.log(`Total repay over the term:  ${monthlyRepayment[1]}`);
-//      console.log(`${monthlyRepayment[2]}`);
-
       return true;
     } else {
       return false;
