@@ -34,6 +34,8 @@ body {
 .split-container {
   display: flex;
   height: 100vh;
+
+  position: relative;
 }
 
 .left-side {
@@ -55,7 +57,7 @@ body {
 }
 
 .image {
-  background-image: url(./assets/bg-main-desktop.png);
+  background: url(./assets/bg-main-desktop.png) no-repeat center center / cover;
 }
 
 /*
@@ -76,7 +78,8 @@ label {
   text-transform: uppercase;
   font-size: var(--font-size);
   margin-bottom: 5px;
-  font-size: 16px;
+  font-size: 14px;
+  letter-spacing: 2px;
 }
 
 input {
@@ -89,6 +92,7 @@ input {
   padding-left: 10px;
 
   width: 100%;
+  color: var(--active-input);
 }
 
 input::placeholder {
@@ -149,6 +153,59 @@ Button
 .error-message {
   color: var(--error);
   font-size: 12px;
+}
+
+/*
+=======
+cards
+=======
+*/
+
+.front-card,
+.back-card {
+  height: 200px;
+  width: auto;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.front-card {
+  top: 35%;
+  left: 25%;
+}
+
+.back-card {
+  top: 68%;
+  left: 28%;
+}
+
+.credit-name,
+.credit-number,
+.credit-date,
+.credit-cvc {
+  color: var(--white);
+  font-size: 24px;
+  position: absolute;
+}
+
+.credit-name {
+  top: 40%;
+  left: 17%;
+}
+
+.credit-number {
+  top: 34%;
+  left: 17%;
+}
+
+.credit-date {
+  top: 40%;
+  left: 31%;
+}
+
+.credit-cvc {
+  top: 61%;
+  left: 38%;
 }
 
 /* Responsive Design */

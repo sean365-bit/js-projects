@@ -3,6 +3,16 @@ console.log("This is Project 3");
 
 const form = document.getElementById("form");
 
+const displayName = document.getElementById("display-credit-name");
+const displayNumber = document.getElementById("display-credit-number");
+const displayDate = document.getElementById("display-credit-date");
+const displayCvc = document.getElementById("display-credit-cvc");
+
+displayName.textContent = "";
+displayNumber.textContent = "0000 0000 0000 0000";
+displayDate.textContent = "";
+displayCvc.textContent = "";
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   validateForm();
@@ -57,14 +67,9 @@ function validateForm() {
   }
 
   if (isValid) {
-    console.log(`${cardHolder}`);
-    console.log(`${cardNumber}`);
+    displayName.textContent = cardHolder.toUpperCase();
+    displayNumber.textContent = cardNumber;
+    displayDate.textContent = `${month}/${year}`;
+    displayCvc.textContent = cvc;
   }
 }
-
-/* 
- if (isValid) {
-    console.log(`${cardHolder}`);
-    console.log(`${cardNumber}`);
-  }
-    */
