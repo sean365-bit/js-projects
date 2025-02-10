@@ -8,10 +8,10 @@ const displayNumber = document.getElementById("display-credit-number");
 const displayDate = document.getElementById("display-credit-date");
 const displayCvc = document.getElementById("display-credit-cvc");
 
-displayName.textContent = "";
+displayName.textContent = "JANE APPLESSED";
 displayNumber.textContent = "0000 0000 0000 0000";
-displayDate.textContent = "";
-displayCvc.textContent = "";
+displayDate.textContent = "00/00";
+displayCvc.textContent = "000";
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -34,6 +34,8 @@ function validateForm() {
   numberError.textContent = "";
   dateError.textContent = "";
   cvcError.textContent = "";
+
+  let formattedNumber = cardNumber.replace(/(\d{4})/g, "$1 ").trim();
 
   let isValid = true;
 
@@ -68,7 +70,7 @@ function validateForm() {
 
   if (isValid) {
     displayName.textContent = cardHolder.toUpperCase();
-    displayNumber.textContent = cardNumber;
+    displayNumber.textContent = formattedNumber;
     displayDate.textContent = `${month}/${year}`;
     displayCvc.textContent = cvc;
   }
