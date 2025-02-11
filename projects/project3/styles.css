@@ -67,7 +67,6 @@ form
 */
 form {
   width: 500px;
-
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -162,10 +161,8 @@ cards
 .bck-front,
 .bck-back {
   border-radius: 10px;
-
   height: 200px;
   width: 380px;
-
   position: absolute;
 }
 
@@ -181,6 +178,16 @@ cards
 
   top: 48%;
   left: 16%;
+}
+
+.logo {
+  height: 50px;
+  width: 100px;
+  background: url(./assets/card-logo.svg) no-repeat center;
+
+  top: 5%;
+  left: 5%;
+  position: absolute;
 }
 
 .credit-name,
@@ -215,8 +222,52 @@ cards
   left: 78%;
 }
 
+.overlay {
+  position: absolute;
+
+  background-color: var(--white);
+  overflow: hidden;
+
+  transition: 0.5s ease;
+
+  display: none;
+
+  width: 500px;
+  height: 400px;
+}
+
+.active {
+  width: 500px;
+  height: 400px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkmark {
+  height: 100px;
+  width: 100px;
+  background: url(./assets/icon-complete.svg) no-repeat center center / cover;
+
+  margin-bottom: 30px;
+}
+
+.greeting {
+  color: var(--active-input);
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+.message {
+  color: var(--Dark-grayish-violet);
+  margin-bottom: 15px;
+  font-size: var(--font-size);
+}
+
 /* Responsive Design */
-@media (max-width: 768px) {
+@media only screen and (max-width: 600px) {
   .split-container {
     flex-direction: column;
   }
@@ -227,9 +278,21 @@ cards
 
   .right-side {
     flex: 7;
+    background-color: cornflowerblue;
   }
 
   .image {
     background: url(./assets/bg-main-mobile.png) no-repeat center center / cover;
+  }
+
+  .bck-front {
+    top: 13%;
+    left: 10%;
+    z-index: 100;
+  }
+
+  .bck-back {
+    top: 2%;
+    left: 20%;
   }
 }

@@ -7,6 +7,8 @@ const displayName = document.getElementById("display-credit-name");
 const displayNumber = document.getElementById("display-credit-number");
 const displayDate = document.getElementById("display-credit-date");
 const displayCvc = document.getElementById("display-credit-cvc");
+const overlay = document.querySelector(".overlay");
+const resetButton = document.getElementById("reset-button");
 
 displayName.textContent = "JANE APPLESSED";
 displayNumber.textContent = "0000 0000 0000 0000";
@@ -69,9 +71,25 @@ function validateForm() {
   }
 
   if (isValid) {
+    overlay.classList.add("active");
     displayName.textContent = cardHolder.toUpperCase();
     displayNumber.textContent = formattedNumber;
     displayDate.textContent = `${month}/${year}`;
     displayCvc.textContent = cvc;
   }
 }
+
+resetButton.addEventListener("click", () => {
+  overlay.classList.remove("active");
+
+  displayName.textContent = "JANE APPLESSED";
+  displayNumber.textContent = "0000 0000 0000 0000";
+  displayDate.textContent = "00/00";
+  displayCvc.textContent = "000";
+
+  document.getElementById("card-holder").value = "";
+  document.getElementById("card-number").value = "";
+  document.getElementById("exp-month").value = "";
+  document.getElementById("exp-year").value = "";
+  document.getElementById("cvc").value = "";
+});
