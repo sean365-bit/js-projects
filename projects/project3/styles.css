@@ -200,11 +200,13 @@ cards
 
 .credit-number {
   top: 50%;
-  left: 17%;
+  left: 10%;
 
   color: var(--white);
   font-size: 24px;
   position: absolute;
+
+  letter-spacing: 3px;
 }
 
 .credit-name {
@@ -267,7 +269,7 @@ cards
 }
 
 /* Responsive Design */
-@media only screen and (max-width: 600px) {
+@media (min-width: 315px) and (max-width: 480px) {
   .split-container {
     flex-direction: column;
   }
@@ -278,7 +280,6 @@ cards
 
   .right-side {
     flex: 7;
-    background-color: cornflowerblue;
   }
 
   .image {
@@ -287,12 +288,140 @@ cards
 
   .bck-front {
     top: 13%;
-    left: 10%;
+    left: 15%;
     z-index: 100;
   }
 
   .bck-back {
     top: 2%;
-    left: 20%;
+    left: 28%;
+  }
+
+  .bck-front,
+  .bck-back {
+    border-radius: 10px;
+    position: absolute;
+
+    width: 50%;
+    height: auto;
+    aspect-ratio: 1.9;
+  }
+
+  .logo {
+    height: 25px;
+    width: 45px;
+    background: url(./assets/card-logo.svg) no-repeat center center / cover;
+
+    top: 5%;
+    left: 5%;
+    position: absolute;
+  }
+
+  .credit-name {
+    top: 75%;
+    left: 5%;
+  }
+
+  .credit-number {
+    left: 8%;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .credit-name,
+  .credit-date,
+  .credit-cvc {
+    font-size: 12px;
+  }
+
+  #reset-button {
+    width: 70%;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .overlay {
+    width: 450px;
+    height: 380px;
+  }
+
+  .split-container {
+    flex-direction: column;
+  }
+
+  .left-side {
+    flex: 3;
+  }
+
+  .right-side {
+    flex: 7;
+  }
+
+  .image {
+    background: url(./assets/bg-main-mobile.png) no-repeat center center / cover;
+  }
+
+  .bck-front {
+    top: 13%;
+    left: 14%;
+    z-index: 100;
+  }
+
+  .bck-back {
+    top: 2%;
+    left: 28%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .split-container {
+    flex-direction: column;
+  }
+
+  .left-side {
+    flex: 3;
+  }
+
+  .right-side {
+    flex: 7;
+  }
+
+  .image {
+    background: url(./assets/bg-main-mobile.png) no-repeat center center / cover;
+  }
+
+  .bck-front {
+    top: 13%;
+    left: 25%;
+    z-index: 100;
+  }
+
+  .bck-back {
+    top: 2%;
+    left: 35%;
+  }
+}
+
+@media (min-width: 1201px) and (max-width: 1600px) {
+  .bck-front {
+    top: 15%;
+    left: 8%;
+  }
+
+  .bck-back {
+    top: 48%;
+    left: 10%;
+  }
+}
+
+@media (min-width: 1601px) {
+  .bck-front {
+    top: 15%;
+    left: 12%;
+  }
+
+  .bck-back {
+    top: 43%;
+    left: 16%;
   }
 }
