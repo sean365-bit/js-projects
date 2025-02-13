@@ -76,31 +76,31 @@
               <fieldset>
                 <legend class="legend-title">Mortgage Type</legend>
                 <div class="radio-selection-container">
-                  <section class="repayment">
-                    <input
+                  <label
+                    class="cursor clickable-radio"
+                    for="radio-selection-one"
+                    ><input
                       type="radio"
                       name="mortgage-type"
                       id="radio-selection-one"
                       class="custom-radio"
                       value="repayment"
                     />
-                    <label class="cursor" for="radio-selection-one"
-                      >Repayment</label
-                    >
-                  </section>
+                    Repayment</label
+                  >
 
-                  <section class="interest-only">
-                    <input
+                  <label
+                    class="cursor clickable-radio"
+                    for="radio-selection-two"
+                    ><input
                       type="radio"
                       name="mortgage-type"
                       id="radio-selection-two"
                       class="custom-radio"
                       value="interest"
                     />
-                    <label class="cursor" for="radio-selection-two"
-                      >Interest Only</label
-                    >
-                  </section>
+                    Interest Only</label
+                  >
                 </div>
                 <small id="mortgage-type-error" class="error-message"></small>
               </fieldset>

@@ -1,10 +1,7 @@
 // console.log("This is Project 2");
-
 const form = document.getElementById("form");
-const resetButton = document.getElementById("reset-button");
+const RESET_BUTTON = document.getElementById("reset-button");
 const overlay = document.querySelector(".overlay");
-const startButton = document.getElementById("startOverlay");
-const stopButton = document.getElementById("stopOverlay");
 const repaymentResults = document.getElementById("repaymentResults");
 const totalResults = document.getElementById("totalResults");
 
@@ -22,11 +19,11 @@ form.addEventListener("submit", (e) => {
       'input[name="mortgage-type"]:checked'
     );
 
-    const monthlyRepayment = calculateMonthlyRepayment(
-      mortgageAmount,
-      mortgageRate,
-      mortgageTerm
-    );
+    const monthlyRepayment = getRepaymentDetails({
+      principal: mortgageAmount,
+      annualInterestRate: mortgageRate,
+      years: mortgageTerm,
+    });
 
     const mortgageAmountErr = document.getElementById("mortgage-amount-error");
     const mortgageTermErr = document.getElementById("mortgage-term-error");
@@ -70,17 +67,16 @@ form.addEventListener("submit", (e) => {
     }
 
     if (isValid) {
-      // Add the 'active' class to start the overlay effect
       overlay.classList.add("active");
 
       if (mortgageType.value === "repayment") {
-        repaymentResults.textContent = `£ ${monthlyRepayment[0]}`;
-        totalResults.textContent = `£ ${monthlyRepayment[1]}`;
+        repaymentResults.textContent = `£ ${monthlyRepayment.monthlyRepayment}`;
+        totalResults.textContent = `£ ${monthlyRepayment.totalRepayment}`;
       }
 
       if (mortgageType.value === "interest") {
         repaymentResults.textContent = ``;
-        totalResults.textContent = `£ ${monthlyRepayment[2]}`;
+        totalResults.textContent = `£ ${monthlyRepayment.interestOnly}`;
       }
       return true;
     } else {
@@ -89,7 +85,51 @@ form.addEventListener("submit", (e) => {
   }
 });
 
-resetButton.addEventListener("click", () => {
+function getRepaymentDetails({ principal, annualInterestRate, years }) {
+  const monthlyRepayment = calculateMonthlyRepayment({
+    principal,
+    annualInterestRate,
+    years,
+  });
+
+  const totalRepayment = calculateTotalRepayment(monthlyRepayment, years);
+  const interestOnly = calculateInterestOnly(principal, annualInterestRate);
+
+  return {
+    monthlyRepayment: formatCurrency(monthlyRepayment),
+    totalRepayment: formatCurrency(totalRepayment),
+    interestOnly: formatCurrency(interestOnly),
+  };
+}
+
+function calculateMonthlyRepayment({ principal, annualInterestRate, years }) {
+  const monthlyInterestRate = annualInterestRate / 100 / 12;
+  const totalPayments = years * 12;
+
+  return (
+    (principal * monthlyInterestRate) /
+    (1 - Math.pow(1 + monthlyInterestRate, -totalPayments))
+  );
+}
+
+function calculateTotalRepayment(monthlyRepayment, years) {
+  return monthlyRepayment * years * 12;
+}
+
+function calculateInterestOnly(principal, annualInterestRate) {
+  const monthlyInterestRate = annualInterestRate / 100 / 12;
+  return (monthlyInterestRate * principal).toFixed(2);
+}
+
+function formatCurrency(value) {
+  return new Intl.NumberFormat("en-US", {
+    style: "decimal",
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(value);
+}
+
+RESET_BUTTON.addEventListener("click", () => {
   overlay.classList.remove("active");
   document.getElementById("mortgage-amount-error").textContent = "";
   document.getElementById("mortgage-term-error").textContent = "";
@@ -105,41 +145,3 @@ resetButton.addEventListener("click", () => {
     radio.checked = false;
   }
 });
-
-// Mortgage Logic
-function calculateMonthlyRepayment(principal, annualInterestRate, years) {
-  let monthlyRepaymentResult, totalRepayment, interestOnly;
-  // Convert annual interest rate to monthly and percentage to decimal
-  const monthlyInterestRate = annualInterestRate / 100 / 12;
-
-  // Total number of payments
-  const totalPayments = years * 12;
-
-  // Mortgage formula
-  const monthlyRepayment =
-    (principal * monthlyInterestRate) /
-    (1 - Math.pow(1 + monthlyInterestRate, -totalPayments));
-
-  // results
-  monthlyRepaymentResult = monthlyRepayment;
-  const monthlyRepaymentResultFormatted = new Intl.NumberFormat("en-US", {
-    style: "decimal",
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(monthlyRepaymentResult);
-
-  totalRepayment = monthlyRepayment * (years * 12);
-  const totalRepaymentFormatted = new Intl.NumberFormat("en-US", {
-    style: "decimal",
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(totalRepayment);
-
-  interestOnly = (monthlyInterestRate * principal).toFixed(2);
-
-  return [
-    monthlyRepaymentResultFormatted,
-    totalRepaymentFormatted,
-    interestOnly,
-  ];
-}

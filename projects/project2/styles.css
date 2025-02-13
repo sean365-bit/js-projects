@@ -130,8 +130,7 @@ Form
 }
 
 .input-group:focus-within,
-.repayment:focus-within,
-.interest-only:focus-within {
+.clickable-radio:focus-within {
   border: 1.8px solid var(--lime);
 }
 
@@ -186,8 +185,7 @@ Form
 }
 
 /* same height for all inputs */
-.repayment,
-.interest-only {
+.clickable-radio {
   height: 2.75rem; /* */
   width: 100%;
   font-size: 1.2rem;
@@ -196,6 +194,7 @@ Form
   border: 1.8px solid var(--slate300);
   border-radius: 5px;
   transition: border-color 0.3s ease;
+  font-weight: 600;
 }
 
 .mortgage-term-and-rate-container {
@@ -263,10 +262,6 @@ input[type="radio"] {
 #radio-selection-two,
 .cursor {
   cursor: pointer;
-}
-
-.cursor {
-  font-weight: 600;
 }
 
 /*
