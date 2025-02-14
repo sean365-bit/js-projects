@@ -1,0 +1,107 @@
+/*
+- Mobile: 375px
+- Desktop: 1440px
+Font size (labels): 20px 
+Weights: 400, 500, 700, 800
+*/
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
+:root {
+  --error: hsl(0, 100%, 66%);
+  --neutral0: hsl(0, 0%, 100%);
+  --neutral300: hsl(252, 6%, 83%);
+  --neutral500: hsl(245, 15%, 58%);
+  --neutral700: hsl(245, 19%, 35%);
+  --neutral900: hsl(248, 70%, 10%);
+  --orange500: hsl(7, 88%, 67%);
+  --orange700: hsl(7, 71%, 60%);
+  --gradient-text: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inconsolata", serif;
+  font-optical-sizing: auto;
+  /*         font-weight: <weight>; */
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+
+  background: var(--neutral500);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+
+  color: var(--neutral0);
+
+  margin: 25px;
+}
+
+.heading {
+  display: flex;
+  gap: 15px;
+  border: 3px solid greenyellow;
+
+  margin-bottom: 30px;
+}
+
+.logo {
+  background: url(./assets/logo-full.svg);
+  height: 30px;
+  width: 30px;
+}
+
+.heading2 {
+  border: 3px solid blueviolet;
+
+  margin-bottom: 30px;
+}
+
+.paragraph {
+  border: 3px solid red;
+  margin-bottom: 30px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-evenly;
+
+  border: 3px solid lightgreen;
+}
+
+.upload {
+  border: 3px solid lightsalmon;
+  margin-bottom: 30px;
+
+  height: 120px;
+  width: 70%;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  border: 3px solid yellow;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+input {
+  margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (min-width: 310px) and (max-width: 480px) {
+  body {
+    background: url(./assets/background-mobile.png) no-repeat center center /
+      cover;
+  }
+}
