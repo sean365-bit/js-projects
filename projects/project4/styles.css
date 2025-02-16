@@ -4,6 +4,7 @@
 Font size (labels): 20px 
 Weights: 400, 500, 700, 800
 */
+
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
 :root {
   --error: hsl(0, 100%, 66%);
@@ -67,19 +68,25 @@ body {
   margin-bottom: 30px;
 }
 
+.upload {
+  border: 3px solid lightsalmon;
+  /* margin-bottom: 30px; */
+
+  height: 120px;
+  width: 70%;
+}
+
 .info {
   display: flex;
   justify-content: space-evenly;
 
   border: 3px solid lightgreen;
+
+  margin-bottom: 30px;
 }
 
-.upload {
-  border: 3px solid lightsalmon;
-  margin-bottom: 30px;
-
-  height: 120px;
-  width: 70%;
+.info-icon {
+  margin-right: 10px;
 }
 
 #form {
@@ -88,6 +95,7 @@ body {
   padding: 20px;
 
   border: 3px solid yellow;
+  width: 80%;
 }
 
 label {
@@ -96,12 +104,54 @@ label {
 
 input {
   margin-bottom: 20px;
+  height: 40px;
+
+  border-radius: 5px;
+  border: 1px solid var(--neutral0);
+}
+
+.button {
+  color: var(--neutral900);
+  background-color: var(--orange500);
+  border-radius: 5px;
+  border: none;
+  font-weight: 600;
+
+  height: 40px;
 }
 
 /* Responsive Design */
 @media (min-width: 310px) and (max-width: 480px) {
   body {
     background: url(./assets/background-mobile.png) no-repeat center center /
+      cover;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  body {
+    background: url(./assets/background-tablet.png) no-repeat center center /
+      cover;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  body {
+    background: url(./assets/background-tablet.png) no-repeat center center /
+      cover;
+  }
+}
+
+@media (min-width: 1201px) and (max-width: 1600px) {
+  body {
+    background: url(./assets/background-desktop.png) no-repeat center center /
+      cover;
+  }
+}
+
+@media (min-width: 1601px) {
+  body {
+    background: url(./assets/background-desktop.png) no-repeat center center /
       cover;
   }
 }
