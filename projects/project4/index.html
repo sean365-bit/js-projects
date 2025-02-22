@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="heading">
-      <div class="logo"></div>
+      <div class="heading__logo"></div>
       <h1>Coding Conf</h1>
     </div>
 
@@ -17,28 +17,49 @@
       Conf 2025 Starts Here!
     </h2>
 
-    <p class="paragraph">
+    <p class="main__paragraph">
       Secure your spot at next year's <br />
       biggest coding conference.
     </p>
 
-    <p>Upload Avatar</p>
-    <div class="upload"></div>
+    <div class="upload">
+      <p class="upload__tittle">Upload Avatar</p>
+      <label for="input-file" id="drop__area">
+        <input type="file" accept="image/*" id="input-file" hidden />
+
+        <div id="img__contiainer">
+          <img src="./assets/icon-upload.svg " alt="upload icon" />
+        </div>
+
+        <p>Drag and drop or click to upload</p>
+      </label>
+    </div>
 
     <div class="info">
-      <img src="./assets/icon-info.svg" alt="info-icon" class="info-icon" />
-      <p>Upload your photo(JPG or PNG, max size: 5 MB)</p>
+      <img src="./assets/icon-info.svg" alt="info-icon" class="info__icon" />
+      <p>Upload your photo(JPG or PNG, max size: 500KB).</p>
     </div>
 
     <form id="form">
-      <label for="full-name"> Full Name </label>
-      <input type="text" id="full-name" placeholder="Jonatan Kristof" />
-
-      <label for="email"> Email Address </label>
-      <input type="text" id="email" placeholder="jonatan@gmail.com" />
-
-      <label for="github-username"> Github Username </label>
+      <label class="label" for="full-name"> Full Name </label>
       <input
+        class="input"
+        type="text"
+        id="full-name"
+        placeholder="Jonatan Kristof"
+      />
+
+      <label class="label" for="email"> Email Address </label>
+      <input
+        class="input"
+        type="text"
+        id="email"
+        placeholder="jonatan@gmail.com"
+      />
+
+      <label class="label" for="github-username"> Github Username </label>
+      <input
+        class="input"
         type="text"
         id="github-username"
         placeholder="@jonatankristof0101"
