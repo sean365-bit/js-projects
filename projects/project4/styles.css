@@ -39,6 +39,41 @@ body {
   display: flex;
   gap: 15px;
 }
+
+.squiggly__line__img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 35%;
+}
+
+.pattern__lines {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+.pattern__circle {
+  position: absolute;
+  top: 65%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+}
+.squiggly__line__bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  height: 500px;
+  width: 600px;
+
+  background: url(./assets/pattern-squiggly-line-bottom-desktop.svg) no-repeat
+    center center / cover;
+}
+.pattern__lines,
+.squiggly__line__bottom {
+  z-index: -1;
+}
 .heading2 {
   font-size: 1.8rem;
 }
@@ -68,13 +103,13 @@ Upload section
 
 .upload,
 #form {
-  width: 90%;
+  width: 35%;
 }
 
 #drop__area {
   border: 2px dashed var(--neutral300);
   width: 100%;
-  height: 120px;
+  height: 160px;
   border-radius: 15px;
 
   /* Flex */
@@ -150,8 +185,12 @@ Upload section
   border-radius: 5px;
   border: none;
   font-weight: 600;
+  transition: background-color 0.3s ease;
 }
-
+.button:hover {
+  background-color: var(--orange700);
+  cursor: pointer;
+}
 .input,
 .button {
   height: 45px;
@@ -164,12 +203,49 @@ Upload section
     background: url(./assets/background-mobile.png) no-repeat center center /
       cover;
   }
+  .squiggly__line__img {
+    height: 20%;
+  }
+  .pattern__lines {
+    height: 80%;
+  }
+  .upload,
+  #form {
+    width: 90%;
+  }
+  .pattern__circle {
+    top: 80%;
+    left: 65%;
+    width: 40%;
+  }
+  .squiggly__line__bottom {
+    height: 200px;
+    width: 250px;
+
+    background: url(./assets/pattern-squiggly-line-bottom-mobile-tablet.svg)
+      no-repeat center center / cover;
+  }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
   body {
     background: url(./assets/background-tablet.png) no-repeat center center /
       cover;
+  }
+
+  .squiggly__line__img {
+    height: 25%;
+  }
+  .upload,
+  #form {
+    width: 70%;
+  }
+  .squiggly__line__bottom {
+    height: 200px;
+    width: 250px;
+
+    background: url(./assets/pattern-squiggly-line-bottom-mobile-tablet.svg)
+      no-repeat center center / cover;
   }
 }
 
@@ -178,12 +254,30 @@ Upload section
     background: url(./assets/background-tablet.png) no-repeat center center /
       cover;
   }
+
+  .squiggly__line__img {
+    height: 30%;
+  }
+  .upload,
+  #form {
+    width: 50%;
+  }
+  .squiggly__line__bottom {
+    height: 200px;
+    width: 250px;
+
+    background: url(./assets/pattern-squiggly-line-bottom-mobile-tablet.svg)
+      no-repeat center center / cover;
+  }
 }
 
 @media (min-width: 1201px) and (max-width: 1600px) {
   body {
     background: url(./assets/background-desktop.png) no-repeat center center /
       cover;
+  }
+  .squiggly__line__img {
+    height: 35%;
   }
 }
 
