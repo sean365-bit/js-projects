@@ -49,29 +49,38 @@
     </div>
 
     <form id="form">
-      <label class="label" for="full-name"> Full Name </label>
-      <input
-        class="input"
-        type="text"
-        id="full-name"
-        placeholder="Jonatan Kristof"
-      />
+      <div class="input__container">
+        <label class="label" for="full__name"> Full Name </label>
+        <input
+          class="input"
+          type="text"
+          id="full__name"
+          placeholder="Jonatan Kristof"
+        />
+        <small id="name__error" class="error-message"></small>
+      </div>
 
-      <label class="label" for="email"> Email Address </label>
-      <input
-        class="input"
-        type="text"
-        id="email"
-        placeholder="jonatan@gmail.com"
-      />
+      <div class="input__container">
+        <label class="label" for="email"> Email Address </label>
+        <input
+          class="input"
+          type="text"
+          id="email"
+          placeholder="jonatan@gmail.com"
+        />
+        <small id="email__error" class="error-message"></small>
+      </div>
 
-      <label class="label" for="github-username"> Github Username </label>
-      <input
-        class="input"
-        type="text"
-        id="github-username"
-        placeholder="@jonatankristof0101"
-      />
+      <div class="input__container">
+        <label class="label" for="github__username"> Github Username </label>
+        <input
+          class="input"
+          type="text"
+          id="github__username"
+          placeholder="@jonatankristof0101"
+        />
+        <small id="github__error" class="error-message"></small>
+      </div>
 
       <button class="button" type="submit">Generate My Ticket</button>
     </form>

@@ -96,7 +96,6 @@ body {
 Upload section
 =======
 */
-
 .upload {
   margin-bottom: 10px;
 }
@@ -169,7 +168,7 @@ Upload section
 }
 
 .input {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: var(--neutral0);
 
   border-radius: 5px;
@@ -177,6 +176,11 @@ Upload section
   padding-left: 10px;
 
   background: hsla(252, 6%, 83%, 0.11);
+}
+.input__container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
 }
 
 .button {
@@ -195,6 +199,10 @@ Upload section
 .button {
   height: 45px;
   font-size: 16px;
+}
+/* error */
+.error-message {
+  color: var(--error);
 }
 
 /* Responsive Design */
