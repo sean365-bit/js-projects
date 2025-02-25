@@ -27,14 +27,23 @@ body {
   font-style: normal;
   font-variation-settings: "wdth" 100;
   background: var(--neutral500);
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
-
+  /* height: 100vh; */
   color: var(--neutral0);
   margin: 25px;
 }
+.content__Code {
+  border: 3px solid yellow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /*  visibility: hidden; */
+}
+
 .heading {
   display: flex;
   gap: 15px;
@@ -74,7 +83,8 @@ body {
 .squiggly__line__bottom {
   z-index: -1;
 }
-.heading2 {
+.heading2,
+.heading__result {
   font-size: 1.8rem;
 }
 .main__paragraph {
@@ -83,7 +93,8 @@ body {
 
 .heading,
 .heading2,
-.main__paragraph {
+.main__paragraph,
+.heading__result {
   margin-bottom: 30px;
 }
 .heading__logo {
@@ -91,6 +102,106 @@ body {
   height: 30px;
   width: 30px;
 }
+#name__result {
+  font-weight: bold;
+  background: linear-gradient(to right, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-transform: capitalize;
+}
+#email__result {
+  color: var(--orange500);
+}
+
+.result {
+  border: 3px solid yellow;
+
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 80%;
+  height: 400px;
+}
+.ticket {
+  width: 100%;
+  position: relative;
+}
+
+.ticket__number {
+  position: absolute;
+  right: 0;
+  top: 50%;
+
+  transform: rotate(90deg);
+}
+.logo {
+  height: 150px;
+
+  background: url(./assets/pattern-ticket.svg) no-repeat center center / cover;
+  padding: 10px;
+
+  position: relative;
+}
+
+.date__result {
+  position: absolute;
+  top: 10px;
+  left: 50px;
+}
+.result__tittle {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.date__time {
+  color: var(--neutral500);
+}
+
+.perfil__info {
+  position: absolute;
+  bottom: 10px;
+  left: 70px;
+}
+
+#img__contiainer__perfil {
+  padding: 10px;
+  border: 1px solid var(--neutral300);
+  border-radius: 15px;
+  background: var(--neutral700);
+  margin-bottom: 10px;
+
+  background-position: center;
+  background-size: cover;
+  height: 60px;
+  width: 60px;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#perfil__info__p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.github_icon_container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.github__img {
+  height: 30px;
+}
+
 /*
 =======
 Upload section
@@ -137,10 +248,13 @@ Upload section
   border-radius: 15px;
   background: var(--neutral700);
   margin-bottom: 10px;
+
+  background-position: center;
+  background-size: cover;
 }
 
 #img__contiainer img {
-  height: 35px;
+  height: 45px;
 }
 
 .info {
@@ -205,6 +319,22 @@ Upload section
   color: var(--error);
 }
 
+/* overlay effect */
+/*
+.overlay {
+  position: absolute;
+
+  background-color: var(--white);
+  overflow: hidden;
+
+  transition: 0.5s ease;
+
+  display: none;
+
+  width: 500px;
+  height: 400px;
+}
+*/
 /* Responsive Design */
 @media (min-width: 310px) and (max-width: 480px) {
   body {

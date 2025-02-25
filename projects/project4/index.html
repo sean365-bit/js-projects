@@ -19,71 +19,110 @@
       <div class="heading__logo"></div>
       <h1>Coding Conf</h1>
     </div>
+    <div class="content__Code">
+      <h2 class="heading2">
+        Your Journey to Coding <br />
+        Conf 2025 Starts Here!
+      </h2>
 
-    <h2 class="heading2">
-      Your Journey to Coding <br />
-      Conf 2025 Starts Here!
-    </h2>
+      <p class="main__paragraph">
+        Secure your spot at next year's <br />
+        biggest coding conference.
+      </p>
 
-    <p class="main__paragraph">
-      Secure your spot at next year's <br />
-      biggest coding conference.
-    </p>
+      <div class="upload">
+        <p class="upload__tittle">Upload Avatar</p>
+        <label for="input__file" id="drop__area">
+          <input type="file" accept="image/*" id="input__file" hidden />
 
-    <div class="upload">
-      <p class="upload__tittle">Upload Avatar</p>
-      <label for="input-file" id="drop__area">
-        <input type="file" accept="image/*" id="input-file" hidden />
+          <div id="img__contiainer">
+            <img
+              src="./assets/icon-upload.svg "
+              alt="upload icon"
+              id="img__logo"
+            />
+          </div>
 
-        <div id="img__contiainer">
-          <img src="./assets/icon-upload.svg " alt="upload icon" />
+          <p>Drag and drop or click to upload</p>
+        </label>
+      </div>
+
+      <div class="info">
+        <img src="./assets/icon-info.svg" alt="info-icon" class="info__icon" />
+        <p>Upload your photo(JPG or PNG, max size: 500KB).</p>
+      </div>
+
+      <form id="form">
+        <div class="input__container">
+          <label class="label" for="full__name"> Full Name </label>
+          <input
+            class="input"
+            type="text"
+            id="full__name"
+            placeholder="Jonatan Kristof"
+          />
+          <small id="name__error" class="error-message"></small>
         </div>
 
-        <p>Drag and drop or click to upload</p>
-      </label>
+        <div class="input__container">
+          <label class="label" for="email"> Email Address </label>
+          <input
+            class="input"
+            type="text"
+            id="email"
+            placeholder="jonatan@gmail.com"
+          />
+          <small id="email__error" class="error-message"></small>
+        </div>
+
+        <div class="input__container">
+          <label class="label" for="github__username"> Github Username </label>
+          <input
+            class="input"
+            type="text"
+            id="github__username"
+            placeholder="@jonatankristof0101"
+          />
+          <small id="github__error" class="error-message"></small>
+        </div>
+
+        <button class="button" type="submit">Generate My Ticket</button>
+      </form>
     </div>
 
-    <div class="info">
-      <img src="./assets/icon-info.svg" alt="info-icon" class="info__icon" />
-      <p>Upload your photo(JPG or PNG, max size: 500KB).</p>
+    <div class="result">
+      <h2 class="heading__result">
+        Congrats, <span id="name__result"></span>! Your ticket is ready.
+      </h2>
+
+      <p class="main__paragraph">
+        We've emailed your ticket to
+        <span id="email__result"></span> and will send updates in the run up to
+        the event.
+      </p>
+
+      <div class="ticket">
+        <div class="logo">
+          <div class="heading__logo"></div>
+          <div class="date__result">
+            <p class="result__tittle">Coding Conf</p>
+            <p class="date__time">Jan 31, 2025 / Austin, TX</p>
+          </div>
+
+          <div class="perfil__info">
+            <p id="perfil__info__p"></p>
+
+            <div class="github_icon_container">
+              <img class="github__img" src="./assets/icon-github.svg" />
+              <p id="perfil__info__github"></p>
+            </div>
+          </div>
+
+          <div id="img__contiainer__perfil"></div>
+        </div>
+        <p class="ticket__number">#01609</p>
+      </div>
     </div>
-
-    <form id="form">
-      <div class="input__container">
-        <label class="label" for="full__name"> Full Name </label>
-        <input
-          class="input"
-          type="text"
-          id="full__name"
-          placeholder="Jonatan Kristof"
-        />
-        <small id="name__error" class="error-message"></small>
-      </div>
-
-      <div class="input__container">
-        <label class="label" for="email"> Email Address </label>
-        <input
-          class="input"
-          type="text"
-          id="email"
-          placeholder="jonatan@gmail.com"
-        />
-        <small id="email__error" class="error-message"></small>
-      </div>
-
-      <div class="input__container">
-        <label class="label" for="github__username"> Github Username </label>
-        <input
-          class="input"
-          type="text"
-          id="github__username"
-          placeholder="@jonatankristof0101"
-        />
-        <small id="github__error" class="error-message"></small>
-      </div>
-
-      <button class="button" type="submit">Generate My Ticket</button>
-    </form>
     <script src="./script.js"></script>
   </body>
 </html>
