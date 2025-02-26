@@ -20,7 +20,7 @@
       <h1>Coding Conf</h1>
     </div>
 
-    <form id="form" class="content__Code">
+    <form id="form">
       <h2 class="heading2">
         Your Journey to Coding <br />
         Conf 2025 Starts Here!
@@ -50,9 +50,8 @@
 
       <div class="info">
         <img src="./assets/icon-info.svg" alt="info-icon" class="info__icon" />
-        <p>Upload your photo(JPG or PNG, max size: 500KB).</p>
+        <p id="upload__error" class="error-message"></p>
       </div>
-      <small id="upload__error" class="error-message"></small>
 
       <div class="input__container">
         <label class="label" for="full__name"> Full Name </label>
@@ -117,12 +116,10 @@
               <p id="perfil__info__github"></p>
             </div>
           </div>
-
           <div id="img__container__perfil"></div>
         </div>
         <p class="ticket__number">#01609</p>
       </div>
-      <!-- <p>File too large. Please upload a photo under 500KB</p> -->
     </div>
     <script src="./script.js"></script>
   </body>

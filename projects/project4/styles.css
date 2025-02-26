@@ -35,41 +35,36 @@ body {
   color: var(--neutral0);
   margin: 25px;
 }
-.content__Code {
-  border: 3px solid yellow;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /*  visibility: hidden; */
-}
+/* heading section */
 .heading {
   display: flex;
   gap: 15px;
 }
 
-.squiggly__line__img {
+/* background images */
+.squiggly__line__img,
+.pattern__lines,
+.pattern__circle,
+.squiggly__line__bottom {
   position: absolute;
+}
+.squiggly__line__img {
   top: 0;
   right: 0;
   height: 35%;
 }
-
 .pattern__lines {
-  position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
 }
 .pattern__circle {
-  position: absolute;
   top: 65%;
   left: 80%;
   transform: translate(-50%, -50%);
-
   z-index: -1;
 }
 .squiggly__line__bottom {
-  position: absolute;
   bottom: 0;
   left: 0;
 
@@ -83,145 +78,46 @@ body {
 .squiggly__line__bottom {
   z-index: -1;
 }
+
+/* form section */
+#form {
+  width: 35%; /* destopk */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .heading2,
 .heading__result {
   font-size: 1.8rem;
 }
-.main__paragraph {
+.main__paragraph,
+#drop__area p {
   color: var(--neutral300);
 }
-
 .heading,
 .heading2,
 .main__paragraph,
 .heading__result {
   margin-bottom: 30px;
 }
-.heading__logo {
-  background: url(./assets/logo-full.svg);
-  height: 30px;
-  width: 30px;
-}
-#name__result {
-  font-weight: bold;
-  background: linear-gradient(to right, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-transform: capitalize;
-}
-#email__result {
-  color: var(--orange500);
-}
-
-.result {
-  border: 3px solid yellow;
-
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  width: 80%;
-  height: 400px;
-}
-.ticket {
-  width: 100%;
-  position: relative;
-}
-
-.ticket__number {
-  position: absolute;
-  right: 0;
-  top: 50%;
-
-  transform: rotate(90deg);
-}
-.logo {
-  height: 150px;
-
-  background: url(./assets/pattern-ticket.svg) no-repeat center center / cover;
-  padding: 10px;
-
-  position: relative;
-}
-
-.date__result {
-  position: absolute;
-  top: 10px;
-  left: 50px;
-}
-.result__tittle {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-.date__time {
-  color: var(--neutral500);
-}
-
-.perfil__info {
-  position: absolute;
-  bottom: 10px;
-  left: 70px;
-}
-#img__container__perfil {
-  padding: 10px;
-  border: 1px solid var(--neutral300);
-  border-radius: 15px;
-  background: var(--neutral700);
-  margin-bottom: 10px;
-
-  background-position: center;
-  background-size: cover;
-  height: 60px;
-  width: 60px;
-
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
-#perfil__info__p {
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: capitalize;
-}
-.github_icon_container {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-.github__img {
-  height: 30px;
-}
-
-/*
-=======
-Upload section
-=======
-*/
 .upload {
   margin-bottom: 10px;
   border: 3px solid greenyellow;
 
   width: 100%;
 }
-
-#form {
-  width: 35%; /* destopk */
+.upload__tittle {
+  margin-bottom: 15px;
 }
-/*
-.upload,
-#form {
-  width: 35%; /* destopk */
-/* } */
-
+.upload__tittle,
+.label {
+  font-size: 18px;
+}
+.label {
+  margin-bottom: 15px;
+  width: fit-content;
+}
 #drop__area {
   border: 2px dashed var(--neutral300);
   width: 100%;
@@ -234,18 +130,25 @@ Upload section
   align-items: center;
   justify-content: center;
   background: hsla(252, 6%, 83%, 0.11);
-}
 
-#drop__area p {
-  color: var(--neutral300);
+  transition: background-color 0.3s ease;
 }
-.upload__tittle {
-  margin-bottom: 15px;
+#drop__area:hover,
+.input:hover {
+  cursor: pointer;
+  background-color: var(--neutral700);
 }
+.input {
+  margin-bottom: 10px;
+  color: var(--neutral0);
 
-.upload__tittle,
-.label {
-  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid var(--neutral0);
+  padding-left: 10px;
+
+  background: hsla(252, 6%, 83%, 0.11);
+  outline: none;
+  transition: background-color 0.3s ease;
 }
 
 #img__container {
@@ -262,43 +165,17 @@ Upload section
 #img__container img {
   height: 45px;
 }
-
 .info {
   display: flex;
   justify-content: space-evenly;
   margin-bottom: 30px;
 }
-
 .info p {
   font-size: 12px;
   color: var(--neutral300);
 }
-
 .info__icon {
   margin-right: 10px;
-}
-
-#form {
-  display: flex;
-  flex-direction: column;
-}
-
-.label {
-  margin-bottom: 15px;
-
-  width: fit-content;
-}
-
-.input {
-  margin-bottom: 10px;
-  color: var(--neutral0);
-
-  border-radius: 5px;
-  border: 1px solid var(--neutral0);
-  padding-left: 10px;
-
-  background: hsla(252, 6%, 83%, 0.11);
-  outline: none;
 }
 .input__container {
   display: flex;
@@ -307,7 +184,6 @@ Upload section
 
   width: 100%; /* */
 }
-
 .button {
   color: var(--neutral900);
   background-color: var(--orange500);
@@ -327,6 +203,105 @@ Upload section
   height: 50px;
   font-size: 16px;
 }
+#name__result {
+  font-weight: bold;
+  background: linear-gradient(to right, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-transform: capitalize;
+}
+#email__result {
+  color: var(--orange500);
+}
+.ticket {
+  width: 100%;
+  position: relative;
+}
+.logo {
+  height: 150px;
+
+  background: url(./assets/pattern-ticket.svg) no-repeat center center / cover;
+  padding: 10px;
+
+  position: relative;
+}
+.heading__logo {
+  background: url(./assets/logo-full.svg);
+  height: 30px;
+  width: 30px;
+}
+.date__result {
+  position: absolute;
+  top: 10px;
+  left: 50px;
+}
+.result__tittle {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.date__time {
+  color: var(--neutral500);
+}
+.perfil__info {
+  position: absolute;
+  bottom: 10px;
+  left: 70px;
+}
+#perfil__info__p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.github_icon_container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.github__img {
+  height: 30px;
+}
+#img__container__perfil {
+  padding: 10px;
+  border: 1px solid var(--neutral300);
+  border-radius: 15px;
+  background: var(--neutral700);
+  margin-bottom: 10px;
+
+  background-position: center;
+  background-size: cover;
+  height: 60px;
+  width: 60px;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.ticket__number {
+  position: absolute;
+  right: 0;
+  top: 50%;
+
+  transform: rotate(90deg);
+}
+.result {
+  border: 3px solid yellow;
+
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 80%;
+  height: 400px;
+}
+
 /* error */
 .error-message {
   color: var(--error);
@@ -344,10 +319,12 @@ Upload section
   .pattern__lines {
     height: 80%;
   }
+  /*
   .upload,
   #form {
     width: 95%;
   }
+    */
   .pattern__circle {
     top: 80%;
     left: 65%;
