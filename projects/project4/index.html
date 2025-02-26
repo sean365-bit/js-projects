@@ -19,7 +19,8 @@
       <div class="heading__logo"></div>
       <h1>Coding Conf</h1>
     </div>
-    <div class="content__Code">
+
+    <form id="form" class="content__Code">
       <h2 class="heading2">
         Your Journey to Coding <br />
         Conf 2025 Starts Here!
@@ -35,9 +36,9 @@
         <label for="input__file" id="drop__area">
           <input type="file" accept="image/*" id="input__file" hidden />
 
-          <div id="img__contiainer">
+          <div id="img__container">
             <img
-              src="./assets/icon-upload.svg "
+              src="./assets/icon-upload.svg"
               alt="upload icon"
               id="img__logo"
             />
@@ -51,44 +52,43 @@
         <img src="./assets/icon-info.svg" alt="info-icon" class="info__icon" />
         <p>Upload your photo(JPG or PNG, max size: 500KB).</p>
       </div>
+      <small id="upload__error" class="error-message"></small>
 
-      <form id="form">
-        <div class="input__container">
-          <label class="label" for="full__name"> Full Name </label>
-          <input
-            class="input"
-            type="text"
-            id="full__name"
-            placeholder="Jonatan Kristof"
-          />
-          <small id="name__error" class="error-message"></small>
-        </div>
+      <div class="input__container">
+        <label class="label" for="full__name"> Full Name </label>
+        <input
+          class="input"
+          type="text"
+          id="full__name"
+          placeholder="Jonatan Kristof"
+        />
+        <small id="name__error" class="error-message"></small>
+      </div>
 
-        <div class="input__container">
-          <label class="label" for="email"> Email Address </label>
-          <input
-            class="input"
-            type="text"
-            id="email"
-            placeholder="jonatan@gmail.com"
-          />
-          <small id="email__error" class="error-message"></small>
-        </div>
+      <div class="input__container">
+        <label class="label" for="email"> Email Address </label>
+        <input
+          class="input"
+          type="text"
+          id="email"
+          placeholder="jonatan@gmail.com"
+        />
+        <small id="email__error" class="error-message"></small>
+      </div>
 
-        <div class="input__container">
-          <label class="label" for="github__username"> Github Username </label>
-          <input
-            class="input"
-            type="text"
-            id="github__username"
-            placeholder="@jonatankristof0101"
-          />
-          <small id="github__error" class="error-message"></small>
-        </div>
+      <div class="input__container">
+        <label class="label" for="github__username"> Github Username </label>
+        <input
+          class="input"
+          type="text"
+          id="github__username"
+          placeholder="@jonatankristof0101"
+        />
+        <small id="github__error" class="error-message"></small>
+      </div>
 
-        <button class="button" type="submit">Generate My Ticket</button>
-      </form>
-    </div>
+      <button class="button" type="submit">Generate My Ticket</button>
+    </form>
 
     <div class="result">
       <h2 class="heading__result">
@@ -118,10 +118,11 @@
             </div>
           </div>
 
-          <div id="img__contiainer__perfil"></div>
+          <div id="img__container__perfil"></div>
         </div>
         <p class="ticket__number">#01609</p>
       </div>
+      <!-- <p>File too large. Please upload a photo under 500KB</p> -->
     </div>
     <script src="./script.js"></script>
   </body>

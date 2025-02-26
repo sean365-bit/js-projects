@@ -3,9 +3,9 @@ const form = document.getElementById("form");
 
 const dropArea = document.getElementById("drop__area");
 const inputFile = document.getElementById("input__file");
-const imgView = document.getElementById("img__contiainer");
+const imgView = document.getElementById("img__container");
 
-const imgViewPerfil = document.getElementById("img__contiainer__perfil");
+const imgViewPerfil = document.getElementById("img__container__perfil");
 const imgLogo = document.getElementById("img__logo");
 const overlayEffect = document.querySelector(".result");
 const dissapearEffect = document.querySelector(".content__Code");
@@ -42,6 +42,7 @@ function validateForm() {
     .value.trim();
 
   const nameError = document.getElementById("name__error");
+  const uploadError = document.getElementById("upload__error");
   const emailError = document.getElementById("email__error");
   const guthubError = document.getElementById("github__error");
   const nameOfPerson = document.getElementById("perfil__info__p");
@@ -50,6 +51,7 @@ function validateForm() {
   const nameResultTittle = document.getElementById("name__result");
 
   nameError.textContent = "";
+  uploadError.textContent = "";
   emailError.textContent = "";
   guthubError.textContent = "";
   nameOfPerson.textContent = "";
@@ -61,6 +63,11 @@ function validateForm() {
 
   if (fullName === "") {
     nameError.textContent = "This field is required";
+    isValid = false;
+  }
+
+  if (!inputFile.files.length) {
+    uploadError.textContent = "This field is required";
     isValid = false;
   }
 
