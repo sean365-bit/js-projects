@@ -11,6 +11,12 @@ const overlayEffect = document.querySelector(".result");
 const uploadError = document.getElementById("upload__error");
 uploadError.textContent = "Upload your photo(JPG or PNG, max size: 500KB).";
 
+const options = { year: "numeric", month: "long", day: "numeric" };
+const formattedDate = new Date().toLocaleDateString("en-US", options);
+
+const dateAndTime = document.getElementById("date__time");
+dateAndTime.textContent = `${formattedDate} / Austin TX`;
+
 inputFile.addEventListener("change", uploadImage);
 
 function uploadImage() {

@@ -1,9 +1,3 @@
-/*
-- Mobile: 375px
-- Desktop: 1440px
-Font size (labels): 20px 
-Weights: 400, 500, 700, 800
-*/
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
 :root {
   --error: hsl(0, 100%, 66%);
@@ -35,13 +29,10 @@ body {
   color: var(--neutral0);
   margin: 25px;
 }
-/* heading section */
 .heading {
   display: flex;
   gap: 15px;
 }
-
-/* background images */
 .squiggly__line__img,
 .pattern__lines,
 .pattern__circle,
@@ -78,8 +69,6 @@ body {
 .squiggly__line__bottom {
   z-index: -1;
 }
-
-/* form section */
 #form {
   width: 35%; /* destopk */
 
@@ -87,9 +76,8 @@ body {
   flex-direction: column;
   align-items: center;
 }
-.heading2,
-.heading__result {
-  font-size: 1.8rem;
+.heading2 {
+  font-size: 2rem;
 }
 .main__paragraph,
 #drop__area p {
@@ -103,8 +91,6 @@ body {
 }
 .upload {
   margin-bottom: 10px;
-  border: 3px solid greenyellow;
-
   width: 100%;
 }
 .upload__tittle {
@@ -130,7 +116,6 @@ body {
   align-items: center;
   justify-content: center;
   background: hsla(252, 6%, 83%, 0.11);
-
   transition: background-color 0.3s ease;
 }
 #drop__area:hover,
@@ -150,7 +135,6 @@ body {
   outline: none;
   transition: background-color 0.3s ease;
 }
-
 #img__container {
   padding: 10px;
   border: 1px solid var(--neutral300);
@@ -170,6 +154,15 @@ body {
   justify-content: space-evenly;
   margin-bottom: 30px;
 }
+/* */
+.input__alert__icon {
+  visibility: hidden;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .info p {
   font-size: 12px;
   color: var(--neutral300);
@@ -218,41 +211,49 @@ body {
   width: 100%;
   position: relative;
 }
-.logo {
-  height: 150px;
 
-  background: url(./assets/pattern-ticket.svg) no-repeat center center / cover;
-  padding: 10px;
-
-  position: relative;
-}
 .heading__logo {
   background: url(./assets/logo-full.svg);
   height: 30px;
   width: 30px;
 }
-.date__result {
-  position: absolute;
-  top: 10px;
-  left: 50px;
-}
+
 .result__tittle {
-  font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 8px;
 }
-.date__time {
+#date__time {
   color: var(--neutral500);
 }
 .perfil__info {
   position: absolute;
-  bottom: 10px;
-  left: 70px;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  gap: 20px;
 }
+
+.one__side {
+  flex: 1;
+}
+.two__side {
+  flex: 3;
+}
+.ticket__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: fit-content;
+  position: absolute;
+}
+
 #perfil__info__p {
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: capitalize;
+  margin-bottom: 10px;
 }
 .github_icon_container {
   display: flex;
@@ -273,22 +274,18 @@ body {
   background-size: cover;
   height: 60px;
   width: 60px;
-
-  position: absolute;
-  bottom: 0;
-  left: 0;
 }
 .ticket__number {
   position: absolute;
-  right: 0;
-  top: 50%;
-
-  transform: rotate(90deg);
+  top: 48%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  color: var(--neutral500);
+  white-space: nowrap;
+  font-size: 1.5rem;
 }
 .result {
-  border: 3px solid yellow;
-
   display: none;
+
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -298,8 +295,16 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  width: 80%;
-  height: 400px;
+  height: fit-content;
+}
+.logo {
+  background: url(./assets/pattern-ticket.svg) no-repeat center center / cover;
+
+  background-size: contain;
+  padding: 15px;
+  position: relative;
+
+  height: 300px;
 }
 
 /* error */
@@ -313,18 +318,15 @@ body {
     background: url(./assets/background-mobile.png) no-repeat center center /
       cover;
   }
+  #form {
+    width: 95%;
+  }
   .squiggly__line__img {
     height: 20%;
   }
   .pattern__lines {
     height: 80%;
   }
-  /*
-  .upload,
-  #form {
-    width: 95%;
-  }
-    */
   .pattern__circle {
     top: 80%;
     left: 65%;
@@ -337,6 +339,35 @@ body {
     background: url(./assets/pattern-squiggly-line-bottom-mobile-tablet.svg)
       no-repeat center center / cover;
   }
+  .heading__result {
+    font-size: 2rem;
+  }
+  .main__paragraph {
+    font-size: 1.1rem;
+  }
+  .result {
+    width: 90%;
+  }
+  .logo {
+    height: 200px;
+  }
+  .perfil__info {
+    bottom: 25px;
+    left: 10px;
+  }
+  .ticket__title {
+    top: 20px;
+  }
+  .ticket__number {
+    font-size: 1.2rem;
+    left: 85%;
+  }
+  .result__tittle {
+    font-size: 1.6rem;
+  }
+  #date__time {
+    font-size: 14px;
+  }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
@@ -344,20 +375,48 @@ body {
     background: url(./assets/background-tablet.png) no-repeat center center /
       cover;
   }
+  #form {
+    width: 75%;
+  }
   .squiggly__line__img {
     height: 25%;
   }
-  .upload,
-  #form {
-    width: 80%; /* 95  */
-  }
-
   .squiggly__line__bottom {
     height: 200px;
     width: 250px;
 
     background: url(./assets/pattern-squiggly-line-bottom-mobile-tablet.svg)
       no-repeat center center / cover;
+  }
+  .heading__result {
+    font-size: 2.3rem;
+  }
+  .main__paragraph {
+    font-size: 1.5rem;
+  }
+  .result {
+    width: 70%;
+  }
+  .logo {
+    height: 220px;
+  }
+  .perfil__info {
+    bottom: 25px;
+    left: 30px;
+  }
+  .ticket__title {
+    top: 25px;
+    left: 30px;
+  }
+  .ticket__number {
+    font-size: 1.5rem;
+    left: 83%;
+  }
+  .result__tittle {
+    font-size: 1.8rem;
+  }
+  #date__time {
+    font-size: 16px;
   }
 }
 
@@ -366,16 +425,56 @@ body {
     background: url(./assets/background-tablet.png) no-repeat center center /
       cover;
   }
+  #form {
+    width: 50%;
+  }
   .squiggly__line__img {
     height: 30%;
   }
-
   .squiggly__line__bottom {
     height: 200px;
     width: 250px;
 
     background: url(./assets/pattern-squiggly-line-bottom-mobile-tablet.svg)
       no-repeat center center / cover;
+  }
+  .heading__result {
+    font-size: 2.3rem;
+  }
+  .main__paragraph {
+    font-size: 1.5rem;
+  }
+  .result {
+    width: 60%;
+  }
+  .perfil__info {
+    bottom: 40px;
+    left: 45px;
+  }
+  .ticket__title {
+    top: 40px;
+    left: 45px;
+  }
+  .ticket__number {
+    font-size: 2rem;
+    left: 89%;
+  }
+  .result__tittle {
+    font-size: 2.3rem;
+  }
+
+  #date__time {
+    font-size: 18px;
+  }
+  .github__img {
+    height: 40px;
+  }
+  #perfil__info__github {
+    font-size: 18px;
+  }
+  #img__container__perfil {
+    height: 80px;
+    width: 80px;
   }
 }
 
@@ -387,11 +486,91 @@ body {
   .squiggly__line__img {
     height: 35%;
   }
+  .heading__result {
+    font-size: 2.5rem;
+  }
+  .main__paragraph {
+    font-size: 1.8rem;
+  }
+  .result {
+    width: 45%;
+  }
+  .logo {
+    height: 300px;
+  }
+  .perfil__info {
+    bottom: 40px;
+    left: 10px;
+  }
+  .ticket__title {
+    top: 25px;
+  }
+  .ticket__number {
+    font-size: 2rem;
+    left: 86%;
+  }
+  .result__tittle {
+    font-size: 2.5rem;
+  }
+  #date__time {
+    font-size: 24px;
+  }
+  .github__img {
+    height: 45px;
+  }
+  #perfil__info__github {
+    font-size: 18px;
+  }
+  #img__container__perfil {
+    height: 90px;
+    width: 90px;
+  }
 }
 
 @media (min-width: 1601px) {
   body {
     background: url(./assets/background-desktop.png) no-repeat center center /
       cover;
+  }
+  .heading__result {
+    font-size: 2.8rem;
+  }
+  .main__paragraph {
+    font-size: 2rem;
+  }
+  .result {
+    width: 35%;
+  }
+  .logo {
+    height: 400px;
+  }
+  .perfil__info {
+    bottom: 80px;
+    left: 40px;
+  }
+  .ticket__title {
+    top: 75px;
+    left: 40px;
+  }
+  .ticket__number {
+    font-size: 2.5rem;
+    left: 86%;
+  }
+  .result__tittle {
+    font-size: 3.2rem;
+  }
+  #date__time,
+  #perfil__info__p {
+    font-size: 1.8rem;
+  }
+  .github__img {
+    height: 60px;
+  }
+  #perfil__info__github {
+    font-size: 24px;
+  }
+  #img__container__perfil {
+    height: 120px;
+    width: 120px;
   }
 }
