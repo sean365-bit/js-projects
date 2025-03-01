@@ -1,10 +1,11 @@
 "use strict";
 const form = document.getElementById("form");
+const errorColor = "hsl(0, 100%, 66%)";
+const normalColor = "hsl(252, 6%, 83%)";
 
 const dropArea = document.getElementById("drop__area");
 const inputFile = document.getElementById("input__file");
 const imgView = document.getElementById("img__container");
-
 const imgViewPerfil = document.getElementById("img__container__perfil");
 const imgLogo = document.getElementById("img__logo");
 const overlayEffect = document.querySelector(".result");
@@ -20,7 +21,30 @@ dateAndTime.textContent = `${formattedDate} / Austin TX`;
 inputFile.addEventListener("change", uploadImage);
 
 function uploadImage() {
-  let imgLink = URL.createObjectURL(inputFile.files[0]);
+  const file = inputFile.files[0];
+
+  if (!file) return;
+
+  const allowedTypes = ["image/jpeg", "image/png"];
+  const maxSize = 500 * 1024;
+
+  if (!allowedTypes.includes(file.type)) {
+    uploadError.style.color = errorColor;
+    uploadError.textContent = "Only JPG or PNG files are allowed.";
+    return;
+  }
+
+  if (file.size > maxSize) {
+    uploadError.style.color = errorColor;
+    uploadError.textContent =
+      "File too large. Please upload a photo under 500KB.";
+    return;
+  }
+
+  uploadError.textContent = "Upload your photo(JPG or PNG, max size: 500KB).";
+  uploadError.style.color = normalColor;
+
+  let imgLink = URL.createObjectURL(file);
   imgView.style.backgroundImage = `url(${imgLink})`;
   imgViewPerfil.style.backgroundImage = `url(${imgLink})`;
   imgLogo.style.visibility = "hidden";
@@ -49,18 +73,16 @@ function validateForm() {
     .value.trim();
 
   const nameError = document.getElementById("name__error");
-
   const emailError = document.getElementById("email__error");
-  const guthubError = document.getElementById("github__error");
+  const githubError = document.getElementById("github__error");
   const nameOfPerson = document.getElementById("perfil__info__p");
   const githubUser = document.getElementById("perfil__info__github");
   const userEmail = document.getElementById("email__result");
   const nameResultTittle = document.getElementById("name__result");
 
   nameError.textContent = "";
-
   emailError.textContent = "";
-  guthubError.textContent = "";
+  githubError.textContent = "";
   nameOfPerson.textContent = "";
   githubUser.textContent = "";
   userEmail.textContent = "";
@@ -70,11 +92,11 @@ function validateForm() {
 
   if (fullName === "") {
     nameError.textContent = "This field is required";
-
     isValid = false;
   }
 
   if (!inputFile.files.length) {
+    uploadError.style.color = errorColor;
     uploadError.textContent = "This field is required";
     isValid = false;
   }
@@ -85,14 +107,13 @@ function validateForm() {
   }
 
   if (githubUserName === "") {
-    guthubError.textContent = "This field is required";
+    githubError.textContent = "This field is required";
     isValid = false;
   }
 
   if (isValid) {
     overlayEffect.style.display = "flex";
     form.style.visibility = "hidden";
-    console.log(fullName, email, githubUserName);
 
     nameOfPerson.textContent = fullName;
     nameResultTittle.textContent = fullName;
