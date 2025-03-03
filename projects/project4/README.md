@@ -30,12 +30,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./assets/pj4.png)
+![](./screenshot.jpg)
 
 ### Links
 
-- Solution URL: [Check out my code solution](https://github.com/sean365-bit/js-projects/tree/main/projects/project4)
-- Live Site URL: [Check out the live site](https://sean365-bit.github.io/js-projects/projects/project4/index.html)
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
 
@@ -44,4 +44,5 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
+- CSS Grid
 - Mobile-first workflow
