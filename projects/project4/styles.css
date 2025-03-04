@@ -297,6 +297,12 @@ body {
 
   height: fit-content;
 }
+.show__overlay {
+  display: flex;
+}
+.hidden {
+  visibility: hidden;
+}
 .logo {
   background: url(./assets/pattern-ticket.svg) no-repeat center center / cover;
 
