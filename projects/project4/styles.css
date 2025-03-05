@@ -21,11 +21,10 @@ body {
   font-style: normal;
   font-variation-settings: "wdth" 100;
   background: var(--neutral500);
-
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* height: 100vh; */
+  /*  height: 100vh; */
   color: var(--neutral0);
   margin: 25px;
 }
@@ -58,10 +57,8 @@ body {
 .squiggly__line__bottom {
   bottom: 0;
   left: 0;
-
   height: 500px;
   width: 600px;
-
   background: url(./assets/pattern-squiggly-line-bottom-desktop.svg) no-repeat
     center center / cover;
 }
@@ -71,7 +68,6 @@ body {
 }
 #form {
   width: 35%; /* destopk */
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -109,7 +105,6 @@ body {
   width: 100%;
   height: 160px;
   border-radius: 15px;
-
   /* Flex */
   display: flex;
   flex-direction: column;
@@ -117,6 +112,28 @@ body {
   justify-content: center;
   background: hsla(252, 6%, 83%, 0.11);
   transition: background-color 0.3s ease;
+}
+.drag__and__drop__options {
+  display: none;
+  gap: 20px;
+}
+.upload__button {
+  display: flex;
+}
+.drag__and__drop__paragraph {
+  display: none;
+}
+.remove,
+.change {
+  background-color: var(--neutral500);
+  color: var(--neutral0);
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+.remove {
+  text-decoration: underline;
 }
 #drop__area:hover,
 .input:hover {
@@ -141,7 +158,6 @@ body {
   border-radius: 15px;
   background: var(--neutral700);
   margin-bottom: 10px;
-
   background-position: center;
   background-size: cover;
 }
@@ -154,7 +170,6 @@ body {
   justify-content: space-evenly;
   margin-bottom: 30px;
 }
-/* */
 .input__alert__icon {
   visibility: hidden;
 
@@ -162,7 +177,6 @@ body {
   align-items: center;
   gap: 10px;
 }
-
 .info p {
   font-size: 12px;
   color: var(--neutral300);
@@ -174,8 +188,7 @@ body {
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
-
-  width: 100%; /* */
+  width: 100%;
 }
 .button {
   color: var(--neutral900);
@@ -184,12 +197,16 @@ body {
   border: none;
   font-weight: 600;
   transition: background-color 0.3s ease;
-
   width: 100%;
+  margin-bottom: 50px;
 }
+
 .button:hover {
   background-color: var(--orange700);
   cursor: pointer;
+  transition: all 0.2s;
+  transform: translateY(-3px);
+  box-shadow: 0px 3px 6px rgba(250, 242, 242, 0.3);
 }
 .input,
 .button {
@@ -211,13 +228,11 @@ body {
   width: 100%;
   position: relative;
 }
-
 .heading__logo {
   background: url(./assets/logo-full.svg);
   height: 30px;
   width: 30px;
 }
-
 .result__tittle {
   font-weight: bold;
   margin-bottom: 8px;
@@ -233,7 +248,6 @@ body {
   display: flex;
   gap: 20px;
 }
-
 .one__side {
   flex: 1;
 }
@@ -248,7 +262,6 @@ body {
   width: fit-content;
   position: absolute;
 }
-
 #perfil__info__p {
   font-size: 1.2rem;
   font-weight: bold;
@@ -269,7 +282,6 @@ body {
   border-radius: 15px;
   background: var(--neutral700);
   margin-bottom: 10px;
-
   background-position: center;
   background-size: cover;
   height: 60px;
@@ -285,16 +297,13 @@ body {
 }
 .result {
   display: none;
-
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   position: absolute;
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   height: fit-content;
 }
 .show__overlay {
@@ -305,19 +314,15 @@ body {
 }
 .logo {
   background: url(./assets/pattern-ticket.svg) no-repeat center center / cover;
-
   background-size: contain;
   padding: 15px;
   position: relative;
-
   height: 300px;
 }
-
 /* error */
 .error-message {
   color: var(--error);
 }
-
 /* Responsive Design */
 @media (min-width: 310px) and (max-width: 480px) {
   body {
@@ -328,7 +333,7 @@ body {
     width: 95%;
   }
   .squiggly__line__img {
-    height: 20%;
+    height: 10%;
   }
   .pattern__lines {
     height: 80%;
@@ -353,6 +358,7 @@ body {
   }
   .result {
     width: 90%;
+    top: 45%;
   }
   .logo {
     height: 200px;
@@ -385,7 +391,7 @@ body {
     width: 75%;
   }
   .squiggly__line__img {
-    height: 25%;
+    height: 12%;
   }
   .squiggly__line__bottom {
     height: 200px;
@@ -402,6 +408,7 @@ body {
   }
   .result {
     width: 70%;
+    top: 50%;
   }
   .logo {
     height: 220px;
@@ -435,7 +442,7 @@ body {
     width: 50%;
   }
   .squiggly__line__img {
-    height: 30%;
+    height: 15%;
   }
   .squiggly__line__bottom {
     height: 200px;
@@ -452,6 +459,7 @@ body {
   }
   .result {
     width: 60%;
+    top: 55%;
   }
   .perfil__info {
     bottom: 40px;
@@ -468,7 +476,6 @@ body {
   .result__tittle {
     font-size: 2.3rem;
   }
-
   #date__time {
     font-size: 18px;
   }
@@ -490,7 +497,7 @@ body {
       cover;
   }
   .squiggly__line__img {
-    height: 35%;
+    height: 30%;
   }
   .heading__result {
     font-size: 2.5rem;
@@ -500,16 +507,18 @@ body {
   }
   .result {
     width: 45%;
+    top: 55%;
   }
   .logo {
     height: 300px;
   }
   .perfil__info {
     bottom: 40px;
-    left: 10px;
+    left: 40px;
   }
   .ticket__title {
     top: 25px;
+    left: 40px;
   }
   .ticket__number {
     font-size: 2rem;

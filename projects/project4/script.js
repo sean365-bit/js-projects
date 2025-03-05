@@ -1,6 +1,7 @@
 "use strict";
 const form = document.getElementById("form");
 const errorColor = "hsl(0, 100%, 66%)";
+const currentColor = "hsl(252, 6%, 83%)";
 
 const inputFile = document.getElementById("input__file");
 const dropArea = document.getElementById("drop__area");
@@ -17,8 +18,14 @@ const githubUser = document.getElementById("perfil__info__github");
 const userEmail = document.getElementById("email__result");
 const nameResultTittle = document.getElementById("name__result");
 
+const uploadImageOptions = document.querySelector(".drag__and__drop__options");
+const dragAndDropParagraph = document.querySelector(".upload_paragraph");
+const removeButton = document.querySelector(".remove");
+const changeImageButton = document.querySelector(".change");
+
 const uploadError = document.getElementById("upload__error");
 uploadError.textContent = "Upload your photo(JPG or PNG, max size: 500KB).";
+const maxSize = 500 * 1024;
 
 /* Show day and year */
 document.getElementById(
@@ -31,16 +38,41 @@ document.getElementById(
 
 /* Managing photo */
 inputFile.addEventListener("change", uploadImage);
+removeButton.addEventListener("click", removeImage);
 
 function uploadImage() {
   const file = inputFile.files[0];
+  if (!file) return;
+
   uploadError.textContent = "Upload your photo(JPG or PNG, max size: 500KB).";
+  uploadError.style.color = currentColor;
+
+  if (file.size > maxSize) {
+    uploadError.style.color = errorColor;
+    uploadError.textContent =
+      "File too large. Please upload a photo under 500KB";
+    return;
+  }
 
   let imgLink = URL.createObjectURL(file);
   imgView.style.backgroundImage = `url(${imgLink})`;
   imgViewPerfil.style.backgroundImage = `url(${imgLink})`;
   imgLogo.style.visibility = "hidden";
 }
+
+function removeImage(e) {
+  e.preventDefault();
+  imgView.style.backgroundImage = "none";
+  imgViewPerfil.style.backgroundImage = "none";
+
+  if (imgLogo) imgLogo.style.visibility = "visible";
+  inputFile.value = "";
+}
+
+changeImageButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  inputFile.click();
+});
 
 dropArea.addEventListener("dragover", function (e) {
   e.preventDefault();
@@ -85,6 +117,14 @@ function validateForm() {
 
   if (!inputFile.files.length) {
     setErrorMessage(uploadError, "This field is required");
+    uploadError.style.color = errorColor;
+    isValid = false;
+  } else if (inputFile.files[0].size > maxSize) {
+    setErrorMessage(
+      uploadError,
+      "File too large. Please upload a photo under 500KB"
+    );
+    uploadError.style.color = errorColor;
     isValid = false;
   }
 
