@@ -1,0 +1,81 @@
+/* 
+- Mobile: 375px
+- Desktop: 1440px
+- Font size (Introductory Paragraph): 15px
+*/
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+:root {
+  --softCyan: hsl(174, 77%, 80%); /* (Full Slider Bar) */
+  --strongCyan: hsl(174, 86%, 45%); /* (Slider Backround) */
+  --lightGrayish: hsl(14, 92%, 95%); /* (Discount Background) */
+  --lightRed: hsl(15, 100%, 70%); /* (Discount Text) */
+  --paleBlue: hsl(226, 100%, 87%); /* (CTA Text) */
+  /* neutral */
+  --white: hsl (0, 0%, 100%); /* (Pricing Component Background) */
+  --veryPaleBlue: hsl(230, 100%, 99%); /*(Main Background) */
+  --lightGrayishBlue: hsl(224, 65%, 95%); /* (Empty Slider Bar) */
+  --lightGrayishBlue: hsl(223, 50%, 87%); /* (Toggle Background) */
+  --grayishBlue: hsl(225, 20%, 60%); /* (Text) */
+  --darkDesaturatedBlue: hsl(227, 35%, 25%); /* (Text & CTA Background) */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--veryPaleBlue);
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+/* General  */
+
+/* left side */
+.left_side {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid red;
+
+  position: relative;
+}
+.tittle {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.tittle h1 {
+  color: var(--darkDesaturatedBlue);
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+.tittle p {
+  color: var(--grayishBlue);
+  font-weight: 600;
+}
+.pattern_circles {
+  position: absolute;
+  inset: 0;
+
+  background: url(./assets/pattern-circles.svg) no-repeat center calc(10% + 2vw);
+  /* background-size: 55%;  background-size: cover; /* Adjust size for responsiveness */
+  z-index: -1;
+}
+
+.right_side {
+  flex: 3;
+  /*  background-color: #2ecc71; */
+
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  border: 3px solid yellow;
+}
