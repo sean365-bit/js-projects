@@ -1,23 +1,18 @@
-/* 
-- Mobile: 375px
-- Desktop: 1440px
-- Font size (Introductory Paragraph): 15px
-*/
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
-
 :root {
-  --softCyan: hsl(174, 77%, 80%); /* (Full Slider Bar) */
-  --strongCyan: hsl(174, 86%, 45%); /* (Slider Backround) */
-  --lightGrayish: hsl(14, 92%, 95%); /* (Discount Background) */
-  --lightRed: hsl(15, 100%, 70%); /* (Discount Text) */
-  --paleBlue: hsl(226, 100%, 87%); /* (CTA Text) */
+  --softCyan: hsl(174, 77%, 80%);
+  --strongCyan: hsl(174, 86%, 45%);
+  --strongCyanHover: hsl(174, 86%, 30%);
+  --lightGrayish: hsl(14, 92%, 95%);
+  --lightRed: hsl(15, 100%, 70%);
+  --paleBlue: hsl(226, 100%, 87%);
   /* neutral */
-  --white: hsl(0, 0%, 100%); /* (Pricing Component Background) */
-  --veryPaleBlue: hsl(230, 100%, 99%); /*(Main Background) */
-  --emptySlideBar: hsl(224, 65%, 95%); /* (Empty Slider Bar) */
-  --lightGrayishBlue: hsl(223, 50%, 87%); /* (Toggle Background) */
-  --grayishBlue: hsl(225, 20%, 60%); /* (Text) */
-  --darkDesaturatedBlue: hsl(227, 35%, 25%); /* (Text & CTA Background) */
+  --white: hsl(0, 0%, 100%);
+  --veryPaleBlue: hsl(230, 100%, 99%);
+  --emptySlideBar: hsl(224, 65%, 95%);
+  --lightGrayishBlue: hsl(223, 50%, 87%);
+  --grayishBlue: hsl(225, 20%, 60%);
+  --darkDesaturatedBlue: hsl(227, 35%, 25%);
 }
 * {
   margin: 0;
@@ -30,14 +25,11 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
   padding: 20px;
-
   display: flex;
   flex-direction: column;
-  align-items: center; /* */
+  align-items: center;
   min-height: 100vh;
 }
-
-/* left side  and right side */
 .left_side {
   flex: 1;
 
@@ -46,7 +38,9 @@ body {
   justify-content: center;
 
   position: relative;
-  /* width: 100%; */
+  width: 100%;
+
+  padding: 30px;
 }
 .tittle {
   margin-bottom: 20px;
@@ -66,45 +60,34 @@ body {
   inset: 0;
 
   background: url(./assets/pattern-circles.svg) no-repeat center calc(10% + 2vw);
-  /* background-size: 55%;  background-size: cover; /* Adjust size for responsiveness */
   z-index: -1;
 }
-
-/*
 .right_side {
   flex: 3;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  gap: 1px;
 
   width: 100%;
-  height: 100%;
-  border: 1px solid black;
-}
-  */
-
-.right_side {
-  flex: 3;
-  display: flex;
-  justify-content: center;
-  width: 100%;
+  background: var(--lightGrayishBlue);
 
   border: 1px solid var(--white);
-  background: var(--white);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
+  border-radius: 10px;
 }
-
 .pricing {
-  /*
-  height: 400px;
-   padding: 20px;
-*/
   display: flex;
   flex-direction: column;
   width: 100%;
-}
 
+  border: 1px solid var(--white);
+  border-bottom: none; /* Remove the bottom border */
+  border-radius: 10px 10px 0 0; /* Top-left and top-right rounded, bottom corners squared */
+
+  background-color: var(--white);
+}
 .pricing_options {
   flex: 1;
 
@@ -114,7 +97,6 @@ body {
   justify-content: center;
   margin-bottom: 40px;
 }
-
 .page_views {
   color: var(--grayishBlue);
   font-size: 18px;
@@ -129,7 +111,6 @@ body {
   text-align: center;
   margin: 50px auto;
 }
-
 input[type="range"] {
   -webkit-appearance: none;
   width: 100%;
@@ -139,10 +120,8 @@ input[type="range"] {
   border-radius: 5px;
   outline: none;
   transition: 0.3s;
-
   margin-bottom: 30px;
 }
-
 input[type="range"]::-webkit-slider-thumb {
   appearance: none;
   width: 45px;
@@ -150,24 +129,22 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: 50%;
   cursor: pointer;
   transition: 0.3s;
-
-  /* Background color */
   background-color: var(--strongCyan);
 
-  /* Background image */
   background-image: url("./assets/icon-slider.svg");
-  background-size: 50%; /* Adjust icon size */
+  background-size: 50%;
   background-repeat: no-repeat;
   background-position: center;
-
   box-shadow: 0px 5px 20px hsla(174, 86%, 45%, 0.7);
 }
-/*
 input[type="range"]::-webkit-slider-thumb:hover {
-  background: #2980b9;
+  background: var(--strongCyanHover);
+  background-image: url("./assets/icon-slider.svg");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0px 5px 20px hsla(174, 86%, 45%, 0.7);
 }
-  */
-
 #value {
   display: inline-block;
   font-size: 32px;
@@ -175,32 +152,34 @@ input[type="range"]::-webkit-slider-thumb:hover {
   margin-left: 10px;
   transition: transform 0.15s ease-out, opacity 0.15s ease-out;
 }
+.month_value {
+  color: var(--grayishBlue);
+  margin-left: 10px;
+}
 
 /* slider */
-
 .billing_method {
   display: flex;
   justify-content: center;
   align-items: center;
-
   font-weight: bolder;
   font-size: 14px;
   gap: 10px;
 }
-
+.billing_method p {
+  color: var(--grayishBlue);
+}
 .switch {
   position: relative;
   display: inline-block;
   width: 65px;
   height: 34px;
 }
-
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
-
 .slider {
   position: absolute;
   cursor: pointer;
@@ -211,10 +190,8 @@ input[type="range"]::-webkit-slider-thumb:hover {
   background-color: var(--lightGrayishBlue);
   -webkit-transition: 0.4s;
   transition: 0.4s;
-
   border-radius: 34px;
 }
-
 .slider:before {
   position: absolute;
   content: "";
@@ -228,32 +205,25 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
   border-radius: 50%;
 }
-
 input:checked + .slider {
   background-color: var(--strongCyan);
 }
-
 input:focus + .slider {
   box-shadow: 0 0 1px var(--strongCyan);
 }
-
 input:checked + .slider:before {
   -webkit-transform: translateX(28px);
   -ms-transform: translateX(28px);
   transform: translateX(28px);
 }
-
 .discount {
   padding: 5px;
-
   width: 75px;
   text-align: center;
   background-color: var(--lightGrayish);
   color: var(--lightRed);
-
   border-radius: 10px;
 }
-
 .pricing_details {
   flex: 2;
 
@@ -261,15 +231,16 @@ input:checked + .slider:before {
   flex-direction: column;
   align-items: center;
 
-  background: var(--veryPaleBlue); /* */
+  border: 1px solid var(--white);
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  background-color: var(--white);
+  padding-top: 40px;
 }
-
-/* checkmark  */
 .checkmark {
   display: flex;
   align-items: center;
 }
-
 .checkmark::before {
   content: "";
   background: url("./assets/icon-check.svg") no-repeat center center;
@@ -279,28 +250,141 @@ input:checked + .slider:before {
   height: 16px;
   margin-right: 8px;
 }
-/* checkmark  */
-
 .pricing_details p {
   color: var(--grayishBlue);
   margin-bottom: 15px;
 }
-
 .trial_button {
   margin-top: 15px;
-
   background: var(--darkDesaturatedBlue);
-  color: var(--veryPaleBlue);
+  color: var(--paleBlue);
+  font-weight: bolder;
   padding: 5px;
-
   height: 45px;
-  width: 50%;
+  width: 80%;
   font-size: 16px;
-
   border-radius: 25px;
   border: none;
+  transition: 0.3s;
 }
-
 .trial_button:hover {
   cursor: pointer;
+  background: var(--grayishBlue);
+}
+
+/* Media Queries */
+@media (min-width: 481px) and (max-width: 768px) {
+  .left_side,
+  .right_side {
+    width: 80%;
+  }
+
+  .left_side {
+    padding: 50px;
+  }
+
+  .pricing_details {
+    flex-direction: row;
+    padding: 20px;
+  }
+
+  .benefits,
+  .trial_button {
+    flex: 1;
+  }
+
+  .slider_container {
+    width: 80%;
+  }
+
+  .trial_button {
+    width: 30%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .left_side,
+  .right_side {
+    width: 75%;
+  }
+
+  .left_side {
+    padding: 50px;
+  }
+
+  .pricing_details {
+    flex-direction: row;
+    padding: 20px;
+  }
+
+  .benefits,
+  .trial_button {
+    flex: 1;
+  }
+
+  .slider_container {
+    width: 80%;
+  }
+
+  .trial_button {
+    width: 30%;
+  }
+}
+
+@media (min-width: 1201px) and (max-width: 1600px) {
+  .left_side,
+  .right_side {
+    width: 45%;
+  }
+
+  .left_side {
+    padding: 50px;
+  }
+
+  .pricing_details {
+    flex-direction: row;
+    padding: 20px;
+  }
+
+  .benefits,
+  .trial_button {
+    flex: 1;
+  }
+
+  .slider_container {
+    width: 80%;
+  }
+
+  .trial_button {
+    width: 30%;
+  }
+}
+
+@media (min-width: 1601px) {
+  .left_side,
+  .right_side {
+    width: 50%;
+  }
+
+  .left_side {
+    padding: 50px;
+  }
+
+  .pricing_details {
+    flex-direction: row;
+    padding: 20px;
+  }
+
+  .benefits,
+  .trial_button {
+    flex: 1;
+  }
+
+  .slider_container {
+    width: 80%;
+  }
+
+  .trial_button {
+    width: 30%;
+  }
 }
