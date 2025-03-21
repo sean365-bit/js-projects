@@ -83,9 +83,8 @@ body {
   width: 100%;
 
   border: 1px solid var(--white);
-  border-bottom: none; /* Remove the bottom border */
-  border-radius: 10px 10px 0 0; /* Top-left and top-right rounded, bottom corners squared */
-
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
   background-color: var(--white);
 }
 .pricing_options {
@@ -101,10 +100,18 @@ body {
   color: var(--grayishBlue);
   font-size: 18px;
   letter-spacing: 2px;
+}
+.pageview_container {
+  width: 100%;
 
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   margin-top: 50px;
 }
-
+.display_result_pageview {
+  display: none;
+}
 /* slider */
 .slider_container {
   width: 300px;
@@ -112,7 +119,7 @@ body {
   margin: 50px auto;
 }
 input[type="range"] {
-  -webkit-appearance: none;
+  appearance: none;
   width: 100%;
   height: 8px;
   background: var(--emptySlideBar);
@@ -137,6 +144,21 @@ input[type="range"]::-webkit-slider-thumb {
   background-position: center;
   box-shadow: 0px 5px 20px hsla(174, 86%, 45%, 0.7);
 }
+input[type="range"]::-moz-range-thumb {
+  appearance: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: var(--strongCyan);
+
+  background-image: url("./assets/icon-slider.svg");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0px 5px 20px hsla(174, 86%, 45%, 0.7);
+}
 input[type="range"]::-webkit-slider-thumb:hover {
   background: var(--strongCyanHover);
   background-image: url("./assets/icon-slider.svg");
@@ -145,7 +167,17 @@ input[type="range"]::-webkit-slider-thumb:hover {
   background-position: center;
   box-shadow: 0px 5px 20px hsla(174, 86%, 45%, 0.7);
 }
-#value {
+
+input[type="range"]::-moz-range-thumb:hover {
+  background: var(--strongCyanHover);
+  background-image: url("./assets/icon-slider.svg");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0px 5px 20px hsla(174, 86%, 45%, 0.7);
+}
+#value,
+#value2 {
   display: inline-block;
   font-size: 32px;
   font-weight: bold;
@@ -156,7 +188,6 @@ input[type="range"]::-webkit-slider-thumb:hover {
   color: var(--grayishBlue);
   margin-left: 10px;
 }
-
 /* slider */
 .billing_method {
   display: flex;
@@ -224,6 +255,9 @@ input:checked + .slider:before {
   color: var(--lightRed);
   border-radius: 10px;
 }
+.discount_text {
+  display: none;
+}
 .pricing_details {
   flex: 2;
 
@@ -271,32 +305,25 @@ input:checked + .slider:before {
   cursor: pointer;
   background: var(--grayishBlue);
 }
-
-/* Media Queries */
 @media (min-width: 481px) and (max-width: 768px) {
   .left_side,
   .right_side {
     width: 80%;
   }
-
   .left_side {
     padding: 50px;
   }
-
   .pricing_details {
     flex-direction: row;
     padding: 20px;
   }
-
   .benefits,
   .trial_button {
     flex: 1;
   }
-
   .slider_container {
     width: 80%;
   }
-
   .trial_button {
     width: 30%;
   }
@@ -307,25 +334,37 @@ input:checked + .slider:before {
   .right_side {
     width: 75%;
   }
-
   .left_side {
     padding: 50px;
   }
-
+  .display_result_pageview {
+    display: block;
+  }
+  .display_result {
+    display: none;
+  }
+  input[type="range"] {
+    margin-bottom: 10px;
+  }
+  .discount {
+    padding: 10px;
+    width: fit-content;
+  }
+  .discount_text {
+    display: inline;
+    margin-left: 10px;
+  }
   .pricing_details {
     flex-direction: row;
     padding: 20px;
   }
-
   .benefits,
   .trial_button {
     flex: 1;
   }
-
   .slider_container {
     width: 80%;
   }
-
   .trial_button {
     width: 30%;
   }
@@ -336,25 +375,37 @@ input:checked + .slider:before {
   .right_side {
     width: 45%;
   }
-
   .left_side {
     padding: 50px;
   }
-
+  .display_result_pageview {
+    display: block;
+  }
+  .display_result {
+    display: none;
+  }
+  input[type="range"] {
+    margin-bottom: 10px;
+  }
+  .discount {
+    padding: 10px;
+    width: fit-content;
+  }
+  .discount_text {
+    display: inline;
+    margin-left: 10px;
+  }
   .pricing_details {
     flex-direction: row;
     padding: 20px;
   }
-
   .benefits,
   .trial_button {
     flex: 1;
   }
-
   .slider_container {
     width: 80%;
   }
-
   .trial_button {
     width: 30%;
   }
@@ -365,25 +416,37 @@ input:checked + .slider:before {
   .right_side {
     width: 50%;
   }
-
   .left_side {
     padding: 50px;
   }
-
+  .display_result_pageview {
+    display: block;
+  }
+  .display_result {
+    display: none;
+  }
+  input[type="range"] {
+    margin-bottom: 10px;
+  }
+  .discount {
+    padding: 10px;
+    width: fit-content;
+  }
+  .discount_text {
+    display: inline;
+    margin-left: 10px;
+  }
   .pricing_details {
     flex-direction: row;
     padding: 20px;
   }
-
   .benefits,
   .trial_button {
     flex: 1;
   }
-
   .slider_container {
     width: 80%;
   }
-
   .trial_button {
     width: 30%;
   }

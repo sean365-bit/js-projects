@@ -21,10 +21,17 @@
     <div class="right_side">
       <div class="pricing">
         <div class="pricing_options">
-          <h2 class="page_views"></h2>
+          <div class="pageview_container">
+            <h2 class="page_views"></h2>
+
+            <div class="display_result_pageview">
+              <span id="value2"></span><span class="month_value">/month</span>
+            </div>
+          </div>
 
           <div class="slider_container">
             <input
+              class="circle_slider"
               type="range"
               id="slider"
               min="0"
@@ -32,7 +39,9 @@
               value="2"
               step="1"
             />
-            <span id="value"></span><span class="month_value">/month</span>
+            <div class="display_result">
+              <span id="value"></span><span class="month_value">/month</span>
+            </div>
           </div>
 
           <div class="billing_method">
@@ -44,7 +53,10 @@
             </label>
 
             <p>Yearly Billing</p>
-            <div class="discount">-25%</div>
+
+            <div class="discount">
+              -25%<span class="discount_text">discount</span>
+            </div>
           </div>
         </div>
       </div>

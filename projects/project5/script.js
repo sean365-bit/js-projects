@@ -5,12 +5,11 @@ let priceOptions = [...originalPrices];
 const pageviews = ["10K", "50K", "100K", "500K", "1M"];
 const slider = document.getElementById("slider");
 const rangeValue = document.getElementById("value");
+const rangeValuePages = document.getElementById("value2");
 const pageViews = document.querySelector(".page_views");
 const checkBox = document.getElementById("checkbox");
 
 checkBox.addEventListener("change", function () {
-  console.log(checkBox.checked);
-
   priceOptions = checkBox.checked
     ? originalPrices.map((num) => num * 0.75) // Apply 25% discount
     : [...originalPrices]; // Reset prices
@@ -27,6 +26,7 @@ function updateSlider() {
 
   // Update price
   rangeValue.textContent = `$${priceOptions[value].toFixed(2)}`;
+  rangeValuePages.textContent = `$${priceOptions[value].toFixed(2)}`;
 
   // Update pageviews
   pageViews.textContent = `${pageviews[value]} PAGEVIEWS`;
@@ -39,9 +39,15 @@ function updateSlider() {
   requestAnimationFrame(() => {
     rangeValue.style.transform = "scale(1.5)";
     rangeValue.style.opacity = "0.7";
+
+    rangeValuePages.style.transform = "scale(1.5)";
+    rangeValuePages.style.opacity = "0.7";
     setTimeout(() => {
       rangeValue.style.transform = "scale(1)";
       rangeValue.style.opacity = "1";
+
+      rangeValuePages.style.transform = "scale(1)";
+      rangeValuePages.style.opacity = "1";
     }, 150);
   });
 }

@@ -23,12 +23,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./assets/pj5.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Check out my code solution](https://github.com/sean365-bit/js-projects/tree/main/projects/project5)
+- Live Site URL: [Check out the live site](https://sean365-bit.github.io/js-projects/projects/project5/)
 
 ## My process
 
@@ -38,9 +38,3 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - Mobile-first workflow
-
-- 10K pageviews / $8 per month
-- 50K pageviews / $12 per month
-- 100K pageviews / $16 per month
-- 500k pageviews / $24 per month
-- 1M pageviews / $36 per month
